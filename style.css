@@ -1,15 +1,21 @@
 html{
     font-family: 'Prompt', sans-serif;
     font-size: medium;
+    color: #000;
 }
 body{
-    background-color: whitesmoke;
+    background-color: #ffff;
     font-size: 1rem;
     margin: 24px;
 }
 h1{
     font-size: 3rem;
     font-weight: 800;
+    color: #222;
+}
+p,ul{
+    font-weight: 300;
+    line-height: 1.7rem;
 }
 #address{
     margin-top: -24px;
