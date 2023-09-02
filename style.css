@@ -3,6 +3,16 @@ html{
     font-size: medium;
 }
 body{
+    background-color: whitesmoke;
     font-size: 1rem;
-    margin: 40px;
+    margin: 24px;
+}
+h1{
+    font-size: 3rem;
+    font-weight: 800;
+}
+#address{
+    margin-top: -24px;
+    padding-top: 0;
+
 }
