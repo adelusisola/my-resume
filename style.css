@@ -14,8 +14,9 @@ h1{
     color: #222;
 }
 p,ul{
+    font-size: 1rem;
     font-weight: 300;
-    line-height: 1.7rem;
+    line-height: 1.75rem;
 }
 .address{
     font-size: 0.9rem;
