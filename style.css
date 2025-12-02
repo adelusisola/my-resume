@@ -1,36 +1,221 @@
-html{
-    font-family: 'Prompt', sans-serif;
-    font-size: medium;
-    color: #000;
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-body{
-    background-color: #ffff;
-    font-size: 1rem;
-    margin: 24px;
-}
-h1{
-    line-height: 1;
-    font-size: 2.3rem;
-    font-weight: 800;
-    color: #222;
-}
-p,ul{
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.75rem;
-}
-.address{
-    font-size: 0.8rem;
-    font-weight: 500;
-    font-style: oblique;
-    margin-top: -24px;
-    padding-top: 0;
 
+html {
+    font-family: 'Prompt', sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
 }
-#footer-text{
+
+body {
+    background-color: #f8f9fa;
+    font-size: 1rem;
+    margin: 0;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+/* Header styles */
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 30px;
+}
+
+.header-content {
+    flex: 1;
+}
+
+.resume-header h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.address {
     font-size: 0.9rem;
+    font-weight: 400;
+    font-style: normal;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.address a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+.address a:hover {
+    text-decoration: underline;
+}
+
+.profile-image {
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    margin-left: 20px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Main content */
+.resume-content {
+    margin-bottom: 30px;
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.job, .activity {
+    margin-bottom: 20px;
+}
+
+.job-dates {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+em {
+    font-style: italic;
+}
+
+abbr {
+    text-decoration: none;
+    border-bottom: 1px dotted #999;
+    cursor: help;
+}
+
+p, li {
+    font-size: 1rem;
     font-weight: 300;
-    text-align:right;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    line-height: 1.75;
+}
+
+/* Navigation */
+.site-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 25px 0;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.site-navigation a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0077cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.site-navigation a:hover {
+    background-color: #005fa3;
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+#footer-text {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .resume-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-image {
+        margin: 20px auto 15px;
+        width: 120px;
+        height: 120px;
+    }
+    
+    .header-content {
+        width: 100%;
+    }
+    
+    .resume-header h1 {
+        font-size: 2rem;
+    }
+    
+    .site-navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .site-navigation a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .resume-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+    }
 }
