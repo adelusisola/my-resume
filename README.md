@@ -179,6 +179,26 @@ npm run screenshot
 - Canonical URLs
 - Mobile viewport
 - Sitemap-friendly
+- **Sitemap:** `sitemap.xml` (auto-generated)
+- **Analytics:** Google Analytics 4 (GA4) ready to configure
+
+### Analytics Setup
+
+This portfolio includes **Google Analytics 4 (GA4)** tracking code in both HTML files. To activate it:
+
+1. Create a Google Analytics 4 property at [analytics.google.com](https://analytics.google.com/)
+2. Copy your **Measurement ID** (format: `G-XXXXXXXXXX`)
+3. Replace `G-XXXXXXXXXX` in `index.html` and `contact.html` with your ID
+4. Alternatively, update both files to read from environment or config
+
+### Sitemap
+
+The `sitemap.xml` is ready for submission to search engines:
+
+1. Visit [Google Search Console](https://search.google.com/search-console)
+2. Add property: `https://adelusisola.github.io/my-resume/`
+3. Go to **Sitemaps** and add: `https://adelusisola.github.io/my-resume/sitemap.xml`
+4. Repeat for Bing at [Bing Webmaster Tools](https://www.bing.com/webmaster/)
 
 ---
 
