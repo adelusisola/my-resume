@@ -725,10 +725,10 @@
   }
   .cta-section {
     padding: 4rem 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.05) 100%);
+    background: linear-gradient( 135deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.05) 100% );
   }
   body.dark-mode .cta-section {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.05) 100%);
+    background: linear-gradient( 135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.05) 100% );
   }
   .cta-card {
     position: relative;
@@ -758,12 +758,12 @@
     right: -100px;
     width: 300px;
     height: 300px;
-    background: linear-gradient(135deg, rgba(51, 51, 51, 0.05) 0%, transparent 100%);
+    background: linear-gradient( 135deg, rgba(51, 51, 51, 0.05) 0%, transparent 100% );
     border-radius: 50%;
     pointer-events: none;
   }
   body.dark-mode .cta-accent {
-    background: linear-gradient(135deg, rgba(230, 230, 230, 0.05) 0%, transparent 100%);
+    background: linear-gradient( 135deg, rgba(230, 230, 230, 0.05) 0%, transparent 100% );
   }
   .cta-content {
     position: relative;
@@ -795,7 +795,7 @@
     background: #333;
     color: #fff;
     padding: 0.875rem 2rem;
-    border-radius: 6px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -819,7 +819,7 @@
     background: transparent;
     color: #333;
     padding: 0.875rem 2rem;
-    border-radius: 6px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
