@@ -96,6 +96,40 @@
             gap: 1rem;
             margin-top: 1rem;
         }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        body.dark-mode .social-icons a {
+            background-color: #e6e6e6;
+            color: #333;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        body.dark-mode .social-icons a:hover {
+            box-shadow: 0 5px 15px rgba(255,255,255,0.1);
+        }
     </style>
 </head>
 <body>
@@ -502,7 +536,9 @@
                         <td class="content-column">
                             <strong>Electoral Official</strong><br>
                             TASFUED Student Union Government, TASFUED, NG<br>
-                            Ensured fair and transparent electoral processes during student government elections
+                            <ul style="margin-top: 0.5rem;">
+                                <li>Ensured fair and transparent electoral processes during student government elections</li>
+                            </ul>
                         </td>
                     </tr>
                     <tr>
@@ -510,9 +546,11 @@
                         <td class="content-column">
                             <strong>Public Relations Officer</strong><br>
                             National Association of Library and Information Science Students (NALISS), TASFUED, NG<br>
-                            Created and managed general online communication groups to facilitate information sharing among students across all levels<br>
-                            Developed and implemented communication strategies that improved departmental engagement<br>
-                            Represented the department at university-wide events and coordinated with other student associations on campus
+                            <ul style="margin-top: 0.5rem;">
+                                <li>Created and managed general online communication groups to facilitate information sharing among students across all levels</li>
+                                <li>Developed and implemented communication strategies that improved departmental engagement</li>
+                                <li>Represented the department at university-wide events and coordinated with other student associations on campus</li>
+                            </ul>
                         </td>
                     </tr>
                     <tr>
@@ -520,10 +558,12 @@
                         <td class="content-column">
                             <strong>Media Librarian (II)</strong><br>
                             National Association of Library and Information Science Students (NALISS), TASFUED, NG<br>
-                            Collaborated with the NALISS Librarian(I) and Media Librarian(I) to digitize past examination questions, improving access for all students<br>
-                            Curated and shared technology-related tips to help students meet personal information needs when studying<br>
-                            Created digital formats of departmental library resources with Google drive and bit.ly to enhance accessibility to past questions and relevant text-books due to the limited sitting spaces and physical materials<br>
-                            Organized and taught in a digital literacy workshop to teach students on how to operate and complete common tasks with a PC which addressed challenges i observed that most students had and was an obstacle for them in a compulsory Web publishing course we have to do in 200 level.
+                            <ul style="margin-top: 0.5rem;">
+                                <li>Collaborated with the NALISS Librarian(I) and Media Librarian(I) to digitize past examination questions, improving access for all students</li>
+                                <li>Curated and shared technology-related tips to help students meet personal information needs when studying</li>
+                                <li>Created digital formats of departmental library resources with Google drive and bit.ly to enhance accessibility to past questions and relevant text-books due to the limited sitting spaces and physical materials</li>
+                                <li>Organized and taught in a digital literacy workshop to teach students on how to operate and complete common tasks with a PC which addressed challenges i observed that most students had and was an obstacle for them in a compulsory Web publishing course we have to do in 200 level.</li>
+                            </ul>
                         </td>
                     </tr>
                 </table>
