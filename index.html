@@ -1,616 +1,887 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DELE-ADELUSI OLUWANISOLA JOSHUA - Portfolio</title>
 
-    <link rel="stylesheet" href="minimal-style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="minimal-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
-        /* Additional styles for table layouts */
-        .cv-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            font-size: 1rem;
-        }
-        
-        .cv-table th {
-            text-align: left;
-            padding: 0.75rem 1rem;
-            border-bottom: 2px solid #333;
-            font-weight: 500;
-            color: #333;
-        }
-        
-        .cv-table td {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid #eee;
-            vertical-align: top;
-        }
-        
-        .cv-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .cv-table tr:hover td {
-            background-color: rgba(0, 0, 0, 0.02);
-        }
-        
-        body.dark-mode .cv-table th {
-            border-bottom: 2px solid #e6e6e6;
-            color: #e6e6e6;
-        }
-        
-        body.dark-mode .cv-table td {
-            border-bottom: 1px solid #333;
-        }
-        
-        body.dark-mode .cv-table tr:hover td {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        
-        .date-column {
-            width: 25%;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        body.dark-mode .date-column {
-            color: #aaa;
-        }
-        
-        .content-column {
-            width: 75%;
-        }
-        
-        .section-table {
-            margin: 2rem 0;
-        }
-        
-        .section-title-row {
-            background-color: #f8f8f8;
-            border-left: 4px solid #333;
-        }
-        
-        body.dark-mode .section-title-row {
-            background-color: #2a2a2a;
-            border-left: 4px solid #e6e6e6;
-        }
-        
-        .section-title-cell {
-            padding: 1rem !important;
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-        
-        .skill-category {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #333;
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-        
-        body.dark-mode .social-icons a {
-            background-color: #e6e6e6;
-            color: #333;
-        }
-        
-        .social-icons a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        body.dark-mode .social-icons a:hover {
-            box-shadow: 0 5px 15px rgba(255,255,255,0.1);
-        }
+      /* Additional styles for table layouts */
+      .cv-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        font-size: 1rem;
+      }
+
+      .cv-table th {
+        text-align: left;
+        padding: 0.75rem 1rem;
+        border-bottom: 2px solid #333;
+        font-weight: 500;
+        color: #333;
+      }
+
+      .cv-table td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #eee;
+        vertical-align: top;
+      }
+
+      .cv-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .cv-table tr:hover td {
+        background-color: rgba(0, 0, 0, 0.02);
+      }
+
+      body.dark-mode .cv-table th {
+        border-bottom: 2px solid #e6e6e6;
+        color: #e6e6e6;
+      }
+
+      body.dark-mode .cv-table td {
+        border-bottom: 1px solid #333;
+      }
+
+      body.dark-mode .cv-table tr:hover td {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      .date-column {
+        width: 25%;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      body.dark-mode .date-column {
+        color: #aaa;
+      }
+
+      .content-column {
+        width: 75%;
+      }
+
+      .section-table {
+        margin: 2rem 0;
+      }
+
+      .section-title-row {
+        background-color: #f8f8f8;
+        border-left: 4px solid #333;
+      }
+
+      body.dark-mode .section-title-row {
+        background-color: #2a2a2a;
+        border-left: 4px solid #e6e6e6;
+      }
+
+      .section-title-cell {
+        padding: 1rem !important;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      .skill-category {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #333;
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+
+      body.dark-mode .social-icons a {
+        background-color: #e6e6e6;
+        color: #333;
+      }
+
+      .social-icons a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      body.dark-mode .social-icons a:hover {
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <div class="header-content">
-            <div>
-                <a href="https://adelusisola.github.io/my-resume/" class="logo">nisola</a>
-            </div>
-            <div class="nav-container">
-                <nav class="nav">
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#research" class="nav-link">Research</a>
-                    <a href="#publications" class="nav-link">Publications</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#education" class="nav-link">Education</a>
-                    <a href="#experience" class="nav-link">Experience</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                </nav>
-                <a href="contact.html" class="btn btn-primary nav-contact-btn">Contact</a>
-            </div>
-            <button class="hamburger-menu" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+      <div class="header-content">
+        <div>
+          <a href="https://adelusisola.github.io/my-resume/" class="logo"
+            >nisola</a
+          >
         </div>
+        <div class="nav-container">
+          <nav class="nav">
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#about" class="nav-link">About</a>
+          </nav>
+          <a href="contact.html" class="btn btn-primary nav-contact-btn"
+            >Contact Me</a
+          >
+        </div>
+        <button class="hamburger-menu" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
-    
+
     <!-- Theme Toggle Button -->
     <button id="theme-toggle" class="theme-toggle">☀️</button>
 
     <main class="main">
-        <section class="hero">
-            <div class="container">
-                <h1>DELE-ADELUSI OLUWANISOLA JOSHUA</h1>
-                <p>First-class graduate in Library and Information Science. Research interests in Digital Libraries, Information Architecture, and User Experience Design.</p>
-                <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
-                    <a href="contact.html" class="btn btn-primary">Contact Me</a>
-                    <a href="https://drive.google.com/file/d/15wRWuAfqMLGLId9PV8rskeqATruHHuLe/view?usp=sharing" target="_blank" class="btn btn-secondary">View CV <i class="fas fa-external-link-alt"></i></a>
-                </div>
+      <section class="hero">
+        <div class="container">
+          <h1>DELE-ADELUSI OLUWANISOLA JOSHUA</h1>
+          <p>
+            First-class graduate in Library and Information Science. Research
+            interests in Digital Libraries, Information Architecture, and User
+            Experience Design.
+          </p>
+          <div
+            style="
+              margin-top: 2rem;
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+            "
+          >
+            <a href="contact.html" class="btn btn-primary">Contact Me</a>
+            <a
+              href="https://drive.google.com/file/d/15wRWuAfqMLGLId9PV8rskeqATruHHuLe/view?usp=sharing"
+              target="_blank"
+              class="btn btn-secondary"
+              >View CV <i class="fas fa-external-link-alt"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" class="section">
+        <div class="container">
+          <h2 class="section-title">Research</h2>
+
+          <table class="cv-table section-table">
+            <tr class="section-title-row">
+              <td colspan="2" class="section-title-cell">Research Interests</td>
+            </tr>
+            <tr>
+              <td class="date-column">Focus Areas</td>
+              <td class="content-column">
+                <ul>
+                  <li>Digital Libraries and Information Architecture</li>
+                  <li>Knowledge Organization and Retrieval Systems</li>
+                  <li>Information Science and Digital Humanities</li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="section-title-row">
+              <td colspan="2" class="section-title-cell">
+                Final Year Project Research
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Project Title</td>
+              <td class="content-column">
+                <strong
+                  >"Developing a Cloud-based Online Public Access Catalogue
+                  (OPAC) with Open Knowledge Resources Integration for Academic
+                  Libraries in Nigeria"</strong
+                >
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Research Focus</td>
+              <td class="content-column">
+                Designed and directed development on integrating open access
+                resources in search results along with physical library meta
+                information to enhance user experience in academic libraries.
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section id="publications" class="section">
+        <div class="container">
+          <h2 class="section-title">Academic Publications</h2>
+
+          <table class="cv-table section-table">
+            <tr class="section-title-row">
+              <td colspan="2" class="section-title-cell">Publications</td>
+            </tr>
+            <tr>
+              <td class="date-column">2025</td>
+              <td class="content-column">
+                <strong>Dele-Adelusi, O.J.</strong> (2025). Developing a
+                Cloud-based Online Public Access Catalogue (OPAC) with Open
+                Knowledge Resources Integration for Academic Libraries in
+                Nigeria.
+                <em
+                  >Undergraduate Thesis, Tai Solarin Federal University of
+                  Education</em
+                >.
+              </td>
+            </tr>
+            <!-- Add more publications as they become available -->
+          </table>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div class="portfolio-grid">
+            <div class="portfolio-item">
+              <h3 class="portfolio-title">Cloud-based OPAC</h3>
+              <p class="portfolio-description">
+                Developed a cloud-based Online Public Access Catalogue with Open
+                Knowledge Resources Integration for Academic Libraries in
+                Nigeria as part of my final year project.
+              </p>
+              <div class="portfolio-tags">
+                <span class="tag">Library Science</span>
+                <span class="tag">Web Development</span>
+                <span class="tag">Digital Libraries</span>
+              </div>
             </div>
-        </section>
-
-
-
-
-        <section id="research" class="section">
-            <div class="container">
-                <h2 class="section-title">Research</h2>
-                
-                <table class="cv-table section-table">
-                    <tr class="section-title-row">
-                        <td colspan="2" class="section-title-cell">Research Interests</td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Focus Areas</td>
-                        <td class="content-column">
-                            <ul>
-                                <li>Digital Libraries and Information Architecture</li>
-                                <li>User Experience Design for Information Systems</li>
-                                <li>Knowledge Organization and Retrieval Systems</li>
-                                <li>Information Science and Digital Humanities</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr class="section-title-row">
-                        <td colspan="2" class="section-title-cell">Final Year Project Research</td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Project Title</td>
-                        <td class="content-column">
-                            <strong>"Developing a Cloud-based Online Public Access Catalogue (OPAC) with Open Knowledge Resources Integration for Academic Libraries in Nigeria"</strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Research Focus</td>
-                        <td class="content-column">
-                            Designed and directed development on integrating open access resources in search results along with physical library meta information to enhance user experience in academic libraries.
-                        </td>
-                    </tr>
-                </table>
+            <div class="portfolio-item">
+              <h3 class="portfolio-title">E-commerce Platform</h3>
+              <p class="portfolio-description">
+                Designed and developed a comprehensive e-commerce solution with
+                integrated wallet system supporting both traditional and
+                cryptocurrency payments.
+              </p>
+              <div class="portfolio-tags">
+                <span class="tag">UI/UX Design</span>
+                <span class="tag">E-commerce</span>
+                <span class="tag">Payment Systems</span>
+              </div>
             </div>
-        </section>
-
-        <section id="publications" class="section">
-            <div class="container">
-                <h2 class="section-title">Academic Publications</h2>
-                
-                <table class="cv-table section-table">
-                    <tr class="section-title-row">
-                        <td colspan="2" class="section-title-cell">Publications</td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">2025</td>
-                        <td class="content-column">
-                            <strong>Adelusi, O.J.</strong> (2025). Developing a Cloud-based Online Public Access Catalogue (OPAC) with Open Knowledge Resources Integration for Academic Libraries in Nigeria. <em>Undergraduate Thesis, Tai Solarin University of Education</em>.
-                        </td>
-                    </tr>
-                    <!-- Add more publications as they become available -->
-                </table>
+            <div class="portfolio-item">
+              <h3 class="portfolio-title">University Portal</h3>
+              <p class="portfolio-description">
+                Spearheaded the design and development of a comprehensive
+                university portal for Gerar University of Medical Sciences,
+                enabling digital academic processes.
+              </p>
+              <div class="portfolio-tags">
+                <span class="tag">Product Design</span>
+                <span class="tag">Education</span>
+                <span class="tag">Full Stack</span>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section id="projects" class="section">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <h3 class="portfolio-title">Cloud-based OPAC</h3>
-                        <p class="portfolio-description">Developed a cloud-based Online Public Access Catalogue with Open Knowledge Resources Integration for Academic Libraries in Nigeria as part of my final year project.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Library Science</span>
-                            <span class="tag">Web Development</span>
-                            <span class="tag">Digital Libraries</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <h3 class="portfolio-title">E-commerce Platform</h3>
-                        <p class="portfolio-description">Designed and developed a comprehensive e-commerce solution with integrated wallet system supporting both traditional and cryptocurrency payments.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">UI/UX Design</span>
-                            <span class="tag">E-commerce</span>
-                            <span class="tag">Payment Systems</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <h3 class="portfolio-title">University Portal</h3>
-                        <p class="portfolio-description">Spearheaded the design and development of a comprehensive university portal for Gerar University of Medical Sciences, enabling digital academic processes.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Product Design</span>
-                            <span class="tag">Education</span>
-                            <span class="tag">Full Stack</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section id="education" class="section">
+        <div class="container">
+          <h2 class="section-title">Education</h2>
 
-        <section id="education" class="section">
-            <div class="container">
-                <h2 class="section-title">Education</h2>
-                
-                <table class="cv-table section-table">
-                    <tr class="section-title-row">
-                        <td colspan="2" class="section-title-cell">Education & Academic Achievements</td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">2025 (Graduated)</td>
-                        <td class="content-column">
-                            <strong>Bachelor of Library and Information Science (B.LIS)</strong><br>
-                            Tai Solarin Federal University of Education, Ijagun, Ijebu-Ode, NG<br>
-                            <em>First Class Honours (CGPA: 4.52) – Best Graduating Student</em><br><br>
-                            <strong>Final Year Project Topic:</strong><br>
-                            "Developing a Cloud-based Online Public Access Catalogue (OPAC) with Open Knowledge Resources Integration for Academic Libraries in Nigeria"<br>
-                            Designed and directed the development of a prototype for the cloud-based OPAC system that integrated open access resources in search results along with physical library meta information.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">2014</td>
-                        <td class="content-column">
-                            <strong>National Examinations Council (NECO) Senior School Certificate Examination</strong><br>
-                            Delsu secondary school, Abraka, Delta state, Nigeria<br>
-                            <em>Five credits including Mathematics and English at first sitting</em>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </section>
+          <table class="cv-table section-table">
+            <tr class="section-title-row">
+              <td colspan="2" class="section-title-cell">
+                Education & Academic Achievements
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">2025 (Graduated)</td>
+              <td class="content-column">
+                <strong
+                  >Bachelor of Library and Information Science (B.LIS)</strong
+                ><br />
+                Tai Solarin Federal University of Education, Ijagun, Ijebu-Ode,
+                NG<br />
+                <em
+                  >First Class Honours (CGPA: 4.52) – Best Graduating
+                  Student</em
+                ><br /><br />
+                <strong>Final Year Project Topic:</strong><br />
+                "Developing a Cloud-based Online Public Access Catalogue (OPAC)
+                with Open Knowledge Resources Integration for Academic Libraries
+                in Nigeria"<br />
+                Designed and directed the development of a prototype for the
+                cloud-based OPAC system that integrated open access resources in
+                search results along with physical library meta information.
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">2014</td>
+              <td class="content-column">
+                <strong
+                  >National Examinations Council (NECO) Senior School
+                  Certificate Examination</strong
+                ><br />
+                Delsu secondary school, Abraka, Delta state, Nigeria<br />
+                <em
+                  >Five credits including Mathematics and English at first
+                  sitting</em
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
 
-        <section id="experience" class="section">
-            <div class="container">
-                <h2 class="section-title">Work Experience</h2>
-                
-                <table class="cv-table section-table">
-                    <tr class="section-title-row">
-                        <td colspan="2" class="section-title-cell">Professional Experience</td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Feb 2025 - Apr 2025</td>
-                        <td class="content-column">
-                            <strong>Product Designer (Remote)</strong><br>
-                            DREST., Lagos, NG<br>
-                            <ul style="margin-top: 0.5rem;">
-                                <li>Spearheaded comprehensive redesign of a Tunisian Fashion e-commerce store, transforming their legacy website into a modern, and sleek online store</li>
-                                <li>Conducted competitive analysis of leading fashion retailers to identify industry best practices and innovative features to implement</li>
-                                <li>Collaborated closely with a graphics designer to create custom visual assets that enhanced brand identity and improved visual aesthetics</li>
-                                <li>Implemented iterative design improvements based on stakeholder feedback, resulting in improved navigation and user flow</li>
-                                <li>Designed responsive interfaces, ensuring consistent user experience across desktop and mobile devices</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Nov 2023 - Jun 2025</td>
-                        <td class="content-column">
-                            <strong>Lead Product Designer & Product manager</strong><br>
-                            Devignerly., Lagos, NG<br>
-                            <ul style="margin-top: 0.5rem;">
-                                <li>Spearheaded the design and development of a comprehensive university portal for Gerar University of Medical Sciences, enabling new applicants, students, faculty, and staff with means to complete academic processes, administrative tools to manage admission process, payment tracking e.t.c.</li>
-                                <li>Interviewed administrative staff and stakeholders to deeply understand the needs of the university, informing the design of intuitive and user-friendly interfaces</li>
-                                <li>Collaborated with the development team to translate designs into scalable and technically efficient platform to guarantee a frictionless user experience</li>
-                                <li>Actively listened for feedback and made timely adjustments to satisfy user needs</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Jul 2022 - Oct 2023</td>
-                        <td class="content-column">
-                            <strong>Lead UI/UX designer (Remote)</strong><br>
-                            Paylode Services., Lagos, NG<br>
-                            <ul style="margin-top: 0.5rem;">
-                                <li>Led and contributed to the design and development for multiple user-centred end to end interfaces for banking and financial products in the online payments, bills payment and payment gateway services sector</li>
-                                <li>Collaborated with cross-functional teams and stakeholders to gather requirements and translate them into effective design solutions</li>
-                                <li>Worked closely with developers to ensure seamless implementation of designs</li>
-                                <li>Worked closely with staff to gather requirements to make certain that administrative dashboards included features that enabled them to work efficiently</li>
-                                <li>Helped design a Lagos state scholarship portal to register and manages avaible scholarships and applicants</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Oct 2022 - Aug 2023</td>
-                        <td class="content-column">
-                            <strong>Lead Product Designer & Product manager (Hybrid)</strong><br>
-                            Advant Capitol. (Vant Savings), Abeokuta, NG<br>
-                            <ul style="margin-top: 0.5rem;">
-                                <li>Researched user trends to implement savings solutions that actually resonate with users</li>
-                                <li>Uncovered insights from current fintech trends as regards loan recovery to inform a key saving feature</li>
-                                <li>Created user flows and tested with real users to make sure the goal of the product was intuitive and easy to figure out</li>
-                                <li>Improved and identified issues with flows involving users successfully creating savings vaults</li>
-                                <li>Managed developers all through development to ensure that designs appeared properly on various mobile devices</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Jul 2022 - Aug 2023</td>
-                        <td class="content-column">
-                            <strong>UI/UX Designer (Remote)</strong><br>
-                            Eaglion Global Technologies, Ltd, Lagos, NG<br>
-                            <ul style="margin-top: 0.5rem;">
-                                <li>Designed a specialized Ecommerce solution based on company directives with a wallet system integrated to accept regular bank transfer and crypto payment</li>
-                                <li>Delivered a polished website for a venture capitalist startup that aligned with their brand identity guide and user needs after interviewing relevant stakeholders to gather insights for the redesign of the company's website</li>
-                                <li>Managed and Maintained a WordPress built ecommerce store for a multivendor business</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Jul 2024 - Jan 2025</td>
-                        <td class="content-column">
-                            <strong>Library Intern(Internship)</strong><br>
-                            Gerar University of Medical Science Library, Ijebu-Ode, NG<br>
-                            <ul style="margin-top: 0.5rem;">
-                                <li>Learned by assisting in cataloguing and classification of library materials</li>
-                                <li>Helped users learn to use the library computer systems in completing their preferred tasks</li>
-                                <li>Contributed to the adoption of digital practices like Spreadsheets in recording of library materials</li>
-                                <li>Supervised E-tests</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </section>
+      <section id="experience" class="section">
+        <div class="container">
+          <h2 class="section-title">Work Experience</h2>
 
-        <section id="skills" class="section">
-            <div class="container">
-                <h2 class="section-title">Skills</h2>
-                
-                <table class="cv-table section-table">
-                    <tr class="section-title-row">
-                        <td colspan="2" class="section-title-cell">Core Competencies</td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Skills</td>
-                        <td class="content-column">
-                            <div class="skills-grid">
-                                <div>
-                                    <div class="skill-category">Design</div>
-                                    <div>Design thinking, Site maps, User flows, Wire framing, User interface (UI) design, User experience (UX) design, User research</div>
-                                </div>
-                                <div>
-                                    <div class="skill-category">Development</div>
-                                    <div>HTML, CSS, JavaScript, Python</div>
-                                </div>
-                                <div>
-                                    <div class="skill-category">Information Science</div>
-                                    <div>IT support, Cataloguing and Classification</div>
-                                </div>
-                                <div>
-                                    <div class="skill-category">Soft Skills</div>
-                                    <div>Leadership and Team Management, Effective Written & Verbal Communication, Problem-solving and Critical Thinking, Project Management, Collaboration, Attention to detail</div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Tools</td>
-                        <td class="content-column">
-                            <div class="skills-grid">
-                                <div>
-                                    <div class="skill-category">Design Tools</div>
-                                    <div>Figma, Notion, Slack, Webflow</div>
-                                </div>
-                                <div>
-                                    <div class="skill-category">Development Tools</div>
-                                    <div>VS Code, PyCharm</div>
-                                </div>
-                                <div>
-                                    <div class="skill-category">Other</div>
-                                    <div>WordPress, Google Workspace, Microsoft Office suite</div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </section>
+          <table class="cv-table section-table">
+            <tr class="section-title-row">
+              <td colspan="2" class="section-title-cell">
+                Professional Experience
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Feb 2025 - Apr 2025</td>
+              <td class="content-column">
+                <strong>Product Designer (Remote)</strong><br />
+                DREST., Lagos, NG<br />
+                <ul style="margin-top: 0.5rem">
+                  <li>
+                    Spearheaded comprehensive redesign of a Tunisian Fashion
+                    e-commerce store, transforming their legacy website into a
+                    modern, and sleek online store
+                  </li>
+                  <li>
+                    Conducted competitive analysis of leading fashion retailers
+                    to identify industry best practices and innovative features
+                    to implement
+                  </li>
+                  <li>
+                    Collaborated closely with a graphics designer to create
+                    custom visual assets that enhanced brand identity and
+                    improved visual aesthetics
+                  </li>
+                  <li>
+                    Implemented iterative design improvements based on
+                    stakeholder feedback, resulting in improved navigation and
+                    user flow
+                  </li>
+                  <li>
+                    Designed responsive interfaces, ensuring consistent user
+                    experience across desktop and mobile devices
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Nov 2023 - Jun 2025</td>
+              <td class="content-column">
+                <strong>Lead Product Designer & Product manager</strong><br />
+                Devignerly., Lagos, NG<br />
+                <ul style="margin-top: 0.5rem">
+                  <li>
+                    Spearheaded the design and development of a comprehensive
+                    university portal for Gerar University of Medical Sciences,
+                    enabling new applicants, students, faculty, and staff with
+                    means to complete academic processes, administrative tools
+                    to manage admission process, payment tracking e.t.c.
+                  </li>
+                  <li>
+                    Interviewed administrative staff and stakeholders to deeply
+                    understand the needs of the university, informing the design
+                    of intuitive and user-friendly interfaces
+                  </li>
+                  <li>
+                    Collaborated with the development team to translate designs
+                    into scalable and technically efficient platform to
+                    guarantee a frictionless user experience
+                  </li>
+                  <li>
+                    Actively listened for feedback and made timely adjustments
+                    to satisfy user needs
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Jul 2022 - Oct 2023</td>
+              <td class="content-column">
+                <strong>Lead UI/UX designer (Remote)</strong><br />
+                Paylode Services., Lagos, NG<br />
+                <ul style="margin-top: 0.5rem">
+                  <li>
+                    Led and contributed to the design and development for
+                    multiple user-centred end to end interfaces for banking and
+                    financial products in the online payments, bills payment and
+                    payment gateway services sector
+                  </li>
+                  <li>
+                    Collaborated with cross-functional teams and stakeholders to
+                    gather requirements and translate them into effective design
+                    solutions
+                  </li>
+                  <li>
+                    Worked closely with developers to ensure seamless
+                    implementation of designs
+                  </li>
+                  <li>
+                    Worked closely with staff to gather requirements to make
+                    certain that administrative dashboards included features
+                    that enabled them to work efficiently
+                  </li>
+                  <li>
+                    Helped design a Lagos state scholarship portal to register
+                    and manages avaible scholarships and applicants
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Oct 2022 - Aug 2023</td>
+              <td class="content-column">
+                <strong>Lead Product Designer & Product manager (Hybrid)</strong
+                ><br />
+                Advant Capitol. (Vant Savings), Abeokuta, NG<br />
+                <ul style="margin-top: 0.5rem">
+                  <li>
+                    Researched user trends to implement savings solutions that
+                    actually resonate with users
+                  </li>
+                  <li>
+                    Uncovered insights from current fintech trends as regards
+                    loan recovery to inform a key saving feature
+                  </li>
+                  <li>
+                    Created user flows and tested with real users to make sure
+                    the goal of the product was intuitive and easy to figure out
+                  </li>
+                  <li>
+                    Improved and identified issues with flows involving users
+                    successfully creating savings vaults
+                  </li>
+                  <li>
+                    Managed developers all through development to ensure that
+                    designs appeared properly on various mobile devices
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Jul 2022 - Aug 2023</td>
+              <td class="content-column">
+                <strong>UI/UX Designer (Remote)</strong><br />
+                Eaglion Global Technologies, Ltd, Lagos, NG<br />
+                <ul style="margin-top: 0.5rem">
+                  <li>
+                    Designed a specialized Ecommerce solution based on company
+                    directives with a wallet system integrated to accept regular
+                    bank transfer and crypto payment
+                  </li>
+                  <li>
+                    Delivered a polished website for a venture capitalist
+                    startup that aligned with their brand identity guide and
+                    user needs after interviewing relevant stakeholders to
+                    gather insights for the redesign of the company's website
+                  </li>
+                  <li>
+                    Managed and Maintained a WordPress built ecommerce store for
+                    a multivendor business
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Jul 2024 - Jan 2025</td>
+              <td class="content-column">
+                <strong>Library Intern(Internship)</strong><br />
+                Gerar University of Medical Science Library, Ijebu-Ode, NG<br />
+                <ul style="margin-top: 0.5rem">
+                  <li>
+                    Learned by assisting in cataloguing and classification of
+                    library materials
+                  </li>
+                  <li>
+                    Helped users learn to use the library computer systems in
+                    completing their preferred tasks
+                  </li>
+                  <li>
+                    Contributed to the adoption of digital practices like
+                    Spreadsheets in recording of library materials
+                  </li>
+                  <li>Supervised E-tests</li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
 
-        <section id="awards" class="section">
-            <div class="container">
-                <h2 class="section-title">Awards & Certifications</h2>
-                
-                <table class="cv-table section-table">
-                    <tr class="section-title-row">
-                        <td colspan="2" class="section-title-cell">Awards & Certifications</td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Academic Achievement</td>
-                        <td class="content-column">
-                            <strong>Best Graduating Student</strong><br>
-                            Department of Library and Information Science, TASFUED<br>
-                            <em>First Class Honours Graduate with 4.52/5.00 CGPA</em>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">2023</td>
-                        <td class="content-column">
-                            <strong>Meta Introduction to Front-End Development</strong><br>
-                            <em>Coursera</em>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">2023</td>
-                        <td class="content-column">
-                            <strong>Zero To Mastery Academy's Complete Web & Mobile UI/UX Designer</strong><br>
-                            <em>Udemy</em>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">2022</td>
-                        <td class="content-column">
-                            <strong>Google IT Support Fundamentals Certificate</strong><br>
-                            <em>Coursera</em>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">2022</td>
-                        <td class="content-column">
-                            <strong>Georgia Institute of Technology's Introduction to User Experience Design</strong><br>
-                            <em>Coursera</em>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </section>
+      <section id="skills" class="section">
+        <div class="container">
+          <h2 class="section-title">Skills</h2>
 
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Teaching & Mentorship Experience</h2>
-                
-                <table class="cv-table section-table">
-                    <tr class="section-title-row">
-                        <td colspan="2" class="section-title-cell">Teaching & Mentorship Experience</td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Digital Literacy Workshop Facilitator</td>
-                        <td class="content-column">
-                            Organized and delivered workshops on basic computer operations and productivity software for library science students across all levels.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Online Tutoring</td>
-                        <td class="content-column">
-                            Created and Managed a WhatsApp group for revising and explaining course material concepts to my level colleagues, then practicing past questions with them in preparation for our Examinations.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Programming Instructor</td>
-                        <td class="content-column">
-                            Taught introductory HTML, CSS, JavaScript, and Python to beginner-level students in informal peer learning sessions
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Academic Leadership & Extracurricular Engagements</h2>
-                
-                <table class="cv-table section-table">
-                    <tr class="section-title-row">
-                        <td colspan="2" class="section-title-cell">Academic Leadership & Extracurricular Engagements</td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Oct 2024 - Dec 2024</td>
-                        <td class="content-column">
-                            <strong>Electoral Official</strong><br>
-                            TASFUED Student Union Government, TASFUED, NG<br>
-                            <ul style="margin-top: 0.5rem;">
-                                <li>Ensured fair and transparent electoral processes during student government elections</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Feb 2024 - Nov 2024</td>
-                        <td class="content-column">
-                            <strong>Public Relations Officer</strong><br>
-                            National Association of Library and Information Science Students (NALISS), TASFUED, NG<br>
-                            <ul style="margin-top: 0.5rem;">
-                                <li>Created and managed general online communication groups to facilitate information sharing among students across all levels</li>
-                                <li>Developed and implemented communication strategies that improved departmental engagement</li>
-                                <li>Represented the department at university-wide events and coordinated with other student associations on campus</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="date-column">Mar 2023 - Dec 2024</td>
-                        <td class="content-column">
-                            <strong>Media Librarian (II)</strong><br>
-                            National Association of Library and Information Science Students (NALISS), TASFUED, NG<br>
-                            <ul style="margin-top: 0.5rem;">
-                                <li>Collaborated with the NALISS Librarian(I) and Media Librarian(I) to digitize past examination questions, improving access for all students</li>
-                                <li>Curated and shared technology-related tips to help students meet personal information needs when studying</li>
-                                <li>Created digital formats of departmental library resources with Google drive and bit.ly to enhance accessibility to past questions and relevant text-books due to the limited sitting spaces and physical materials</li>
-                                <li>Organized and taught in a digital literacy workshop to teach students on how to operate and complete common tasks with a PC which addressed challenges i observed that most students had and was an obstacle for them in a compulsory Web publishing course we have to do in 200 level.</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </section>
-
-        <section id="about" class="section">
-            <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+          <table class="cv-table section-table">
+            <tr class="section-title-row">
+              <td colspan="2" class="section-title-cell">Core Competencies</td>
+            </tr>
+            <tr>
+              <td class="date-column">Skills</td>
+              <td class="content-column">
+                <div class="skills-grid">
+                  <div>
+                    <div class="skill-category">Design</div>
                     <div>
-                        <h2 class="section-title">Who am I</h2>
-                        <h3>DELE-ADELUSI OLUWANISOLA JOSHUA</h3>
-                        <p>First-class graduate in Library and Information Science with a passion for creating intuitive digital experiences. I blend my academic foundation in information management with practical skills in UX/UI design and web development to solve complex information problems.</p>
-                        <p>Currently exploring research opportunities in Digital Libraries, Information Architecture, and User Experience Design for my PhD journey.</p>
-                        <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/dele-adelusi-oluwanisola/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://github.com/adelusisola" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="https://x.com/Nisola_Adelusi" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-                            <a href="https://wa.me/2348109957139" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                            <a href="mailto:adelusisola@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        </div>
+                      Design thinking, Site maps, User flows, Wire framing, User
+                      interface (UI) design, User experience (UX) design, User
+                      research
                     </div>
+                  </div>
+                  <div>
+                    <div class="skill-category">Development</div>
+                    <div>HTML, CSS, JavaScript, Python</div>
+                  </div>
+                  <div>
+                    <div class="skill-category">Information Science</div>
+                    <div>IT support, Cataloguing and Classification</div>
+                  </div>
+                  <div>
+                    <div class="skill-category">Soft Skills</div>
                     <div>
-                        <img src="assets/images/Nisola's-portrait-image.jpg" alt="Profile Picture" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                      Leadership and Team Management, Effective Written & Verbal
+                      Communication, Problem-solving and Critical Thinking,
+                      Project Management, Collaboration, Attention to detail
                     </div>
+                  </div>
                 </div>
-            </div>
-        </section>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Tools</td>
+              <td class="content-column">
+                <div class="skills-grid">
+                  <div>
+                    <div class="skill-category">Design Tools</div>
+                    <div>Figma, Notion, Slack, Webflow</div>
+                  </div>
+                  <div>
+                    <div class="skill-category">Development Tools</div>
+                    <div>VS Code, PyCharm</div>
+                  </div>
+                  <div>
+                    <div class="skill-category">Other</div>
+                    <div>
+                      WordPress, Google Workspace, Microsoft Office suite
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
 
+      <section id="awards" class="section">
+        <div class="container">
+          <h2 class="section-title">Awards & Certifications</h2>
+
+          <table class="cv-table section-table">
+            <tr class="section-title-row">
+              <td colspan="2" class="section-title-cell">
+                Awards & Certifications
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Academic Achievement</td>
+              <td class="content-column">
+                <strong>Best Graduating Student</strong><br />
+                Department of Library and Information Science, TASFUED<br />
+                <em>First Class Honours Graduate with 4.52/5.00 CGPA</em>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">2023</td>
+              <td class="content-column">
+                <strong>Meta Introduction to Front-End Development</strong
+                ><br />
+                <em>Coursera</em>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">2023</td>
+              <td class="content-column">
+                <strong
+                  >Zero To Mastery Academy's Complete Web & Mobile UI/UX
+                  Designer</strong
+                ><br />
+                <em>Udemy</em>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">2022</td>
+              <td class="content-column">
+                <strong>Google IT Support Fundamentals Certificate</strong
+                ><br />
+                <em>Coursera</em>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">2022</td>
+              <td class="content-column">
+                <strong
+                  >Georgia Institute of Technology's Introduction to User
+                  Experience Design</strong
+                ><br />
+                <em>Coursera</em>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Teaching & Mentorship Experience</h2>
+
+          <table class="cv-table section-table">
+            <tr class="section-title-row">
+              <td colspan="2" class="section-title-cell">
+                Teaching & Mentorship Experience
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Digital Literacy Workshop Facilitator</td>
+              <td class="content-column">
+                Organized and delivered workshops on basic computer operations
+                and productivity software for library science students across
+                all levels.
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Online Tutoring</td>
+              <td class="content-column">
+                Created and Managed a WhatsApp group for revising and explaining
+                course material concepts to my level colleagues, then practicing
+                past questions with them in preparation for our Examinations.
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Programming Instructor</td>
+              <td class="content-column">
+                Taught introductory HTML, CSS, JavaScript, and Python to
+                beginner-level students in informal peer learning sessions
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">
+            Academic Leadership & Extracurricular Engagements
+          </h2>
+
+          <table class="cv-table section-table">
+            <tr class="section-title-row">
+              <td colspan="2" class="section-title-cell">
+                Academic Leadership & Extracurricular Engagements
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Oct 2024 - Dec 2024</td>
+              <td class="content-column">
+                <strong>Electoral Official</strong><br />
+                TASFUED Student Union Government, TASFUED, NG<br />
+                <ul style="margin-top: 0.5rem">
+                  <li>
+                    Ensured fair and transparent electoral processes during
+                    student government elections
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Feb 2024 - Nov 2024</td>
+              <td class="content-column">
+                <strong>Public Relations Officer</strong><br />
+                National Association of Library and Information Science Students
+                (NALISS), TASFUED, NG<br />
+                <ul style="margin-top: 0.5rem">
+                  <li>
+                    Created and managed general online communication groups to
+                    facilitate information sharing among students across all
+                    levels
+                  </li>
+                  <li>
+                    Developed and implemented communication strategies that
+                    improved departmental engagement
+                  </li>
+                  <li>
+                    Represented the department at university-wide events and
+                    coordinated with other student associations on campus
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="date-column">Mar 2023 - Dec 2024</td>
+              <td class="content-column">
+                <strong>Media Librarian (II)</strong><br />
+                National Association of Library and Information Science Students
+                (NALISS), TASFUED, NG<br />
+                <ul style="margin-top: 0.5rem">
+                  <li>
+                    Collaborated with the NALISS Librarian(I) and Media
+                    Librarian(I) to digitize past examination questions,
+                    improving access for all students
+                  </li>
+                  <li>
+                    Curated and shared technology-related tips to help students
+                    meet personal information needs when studying
+                  </li>
+                  <li>
+                    Created digital formats of departmental library resources
+                    with Google drive and bit.ly to enhance accessibility to
+                    past questions and relevant text-books due to the limited
+                    sitting spaces and physical materials
+                  </li>
+                  <li>
+                    Organized and taught in a digital literacy workshop to teach
+                    students on how to operate and complete common tasks with a
+                    PC which addressed challenges i observed that most students
+                    had and was an obstacle for them in a compulsory Web
+                    publishing course we have to do in 200 level.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 3rem;
+              align-items: center;
+            "
+          >
+            <div>
+              <h2 class="section-title">Who am I</h2>
+              <h3>DELE-ADELUSI OLUWANISOLA JOSHUA</h3>
+              <p>
+                First-class graduate in Library and Information Science with a
+                passion for creating intuitive digital experiences. I blend my
+                academic foundation in information management with practical
+                skills in UX/UI design and web development to solve complex
+                information problems.
+              </p>
+              <p>
+                Currently exploring research opportunities in Digital Libraries,
+                Information Architecture, and User Experience Design for my PhD
+                journey.
+              </p>
+              <div class="social-icons">
+                <a
+                  href="https://www.linkedin.com/in/dele-adelusi-oluwanisola/"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a
+                  href="https://github.com/adelusisola"
+                  target="_blank"
+                  aria-label="GitHub"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a
+                  href="https://x.com/Nisola_Adelusi"
+                  target="_blank"
+                  aria-label="X (Twitter)"
+                  ><i class="fab fa-x-twitter"></i
+                ></a>
+                <a
+                  href="https://wa.me/2348109957139"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a href="mailto:adelusisola@gmail.com" aria-label="Email"
+                  ><i class="fas fa-envelope"></i
+                ></a>
+              </div>
+            </div>
+            <div>
+              <img
+                src="assets/images/Nisola's-portrait-image.jpg"
+                alt="Profile Picture"
+                style="
+                  width: 100%;
+                  border-radius: 8px;
+                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>© 2025 DELE-ADELUSI OLUWANISOLA JOSHUA. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>© 2025 DELE-ADELUSI OLUWANISOLA JOSHUA. All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" title="Go to top">
-        <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
     </button>
-    
+
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/2348012345678" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+    <a
+      href="https://wa.me/2348012345678"
+      target="_blank"
+      class="whatsapp-float"
+      title="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
