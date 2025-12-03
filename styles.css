@@ -1,9 +1,13 @@
 /*! tailwindcss v4.1.17 | MIT License | https://tailwindcss.com */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap");
 .container {
   width: 100%;
 }
 .block {
   display: block;
+}
+.contents {
+  display: contents;
 }
 .grid {
   display: grid;
@@ -11,7 +15,6 @@
 .underline {
   text-decoration-line: underline;
 }
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap");
 @layer base {
   * {
     margin: 0;
