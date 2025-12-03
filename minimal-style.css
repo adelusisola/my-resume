@@ -1,3 +1,92 @@
+/* Additional styles for table layouts */
+.cv-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 1rem;
+}
+
+.cv-table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid #333;
+    font-weight: 500;
+    color: #333;
+}
+
+.cv-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+.cv-table tr:last-child td {
+    border-bottom: none;
+}
+
+.cv-table tr:hover td {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+body.dark-mode .cv-table th {
+    border-bottom: 2px solid #e6e6e6;
+    color: #e6e6e6;
+}
+
+body.dark-mode .cv-table td {
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode .cv-table tr:hover td {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.date-column {
+    width: 25%;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+body.dark-mode .date-column {
+    color: #aaa;
+}
+
+.content-column {
+    width: 75%;
+}
+
+.section-table {
+    margin: 2rem 0;
+}
+
+.section-title-row {
+    background-color: #f8f8f8;
+    border-left: 4px solid #333;
+}
+
+body.dark-mode .section-title-row {
+    background-color: #2a2a2a;
+    border-left: 4px solid #e6e6e6;
+}
+
+.section-title-cell {
+    padding: 1rem !important;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.skill-category {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
 /* Minimalist Clean Design - Inspired by seanoshea.me */
 /* Reset and base styles */
 * {
@@ -146,6 +235,7 @@ body.dark-mode .logo {
 .nav {
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
 .nav-link {
@@ -185,6 +275,74 @@ body.dark-mode .nav-link::after {
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+/* Hamburger Menu Button */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .hamburger-menu span {
+    background-color: #e6e6e6;
+}
+
+/* About Section Styles */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-image {
+    order: 2; /* Image comes second on desktop */
+}
+
+.about-text {
+    order: 1; /* Text comes first on desktop */
+}
+
+.social-icons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .social-icons a {
+    color: #e6e6e6;
+}
+
+.social-icons a:hover {
+    color: #666;
+}
+
+body.dark-mode .social-icons a:hover {
+    color: #aaa;
 }
 
 /* Theme Toggle Button - Floating in bottom right */
@@ -534,15 +692,71 @@ body.dark-mode .footer p {
 /* Responsive design */
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
         padding: 0.5rem 15px;
     }
     
     .nav {
-        gap: 0.8rem;
-        flex-wrap: wrap;
-        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 80px;
+        transition: right 0.3s ease;
+        gap: 2rem;
+        z-index: 999;
+    }
+    
+    body.dark-mode .nav {
+        background: rgba(26, 26, 26, 0.95);
+    }
+    
+    .nav.active {
+        right: 0;
+    }
+    
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    .nav-link {
+        font-size: 1.1rem;
+    }
+    
+    .nav-contact-btn {
+        margin-top: 1rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .about-image {
+        order: 1; /* Image comes first on mobile */
+    }
+    
+    .about-text {
+        order: 2; /* Text comes second on mobile */
     }
     
     .hero {
@@ -579,11 +793,6 @@ body.dark-mode .footer p {
     
     #about {
         padding: 2.5rem 0;
-    }
-    
-    #about .container > div {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
     
     .portfolio-grid {
@@ -945,4 +1154,17 @@ body.dark-mode #about [class*="fa-"] {
 /* Smooth transitions */
 * {
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Accessibility improvements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
