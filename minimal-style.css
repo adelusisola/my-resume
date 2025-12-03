@@ -7,14 +7,20 @@
 }
 
 /* Font imports - similar to ensage.co style */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantata+One&family=Mulish:wght@300;400;500;600;700&display=swap');
 
 html {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     scroll-behavior: smooth;
+}
+
+/* Improve scrolling behavior for mobile */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
 }
 
 body {
@@ -37,7 +43,7 @@ body.dark-mode {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'JetBrains Mono', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Cantata One', 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -534,6 +540,8 @@ body.dark-mode .footer p {
     
     .nav {
         gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .hero {
@@ -551,6 +559,129 @@ body.dark-mode .footer p {
     h2 {
         font-size: 1.5rem;
     }
+    
+    .hero .btn {
+        display: block;
+        margin: 0.5rem auto;
+        width: 80%;
+        max-width: 250px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+    
+    #about {
+        padding: 3rem 0;
+    }
+    
+    #about .container > div {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cv-table {
+        font-size: 0.9rem;
+    }
+    
+    .date-column {
+        width: 100%;
+        font-size: 0.85rem;
+    }
+    
+    .content-column {
+        width: 100%;
+    }
+    
+    .section-table tr {
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+    
+    .section-table td {
+        display: block;
+        width: 100%;
+    }
+    
+    .section-table .date-column {
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 0.5rem;
+    }
+    
+    body.dark-mode .section-table .date-column {
+        border-bottom: 1px solid #333;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        padding: 1.5rem;
+    }
+    
+    .contact-info div {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    .header-content {
+        padding: 0 10px;
+    }
+    
+    .theme-toggle {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .hero .btn {
+        width: 90%;
+        padding: 0.7rem 1.5rem;
+    }
+    
+    .portfolio-item {
+        padding: 1rem;
+    }
+    
+    .tag {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+    }
 }
 
 /* Animations */
@@ -567,6 +698,114 @@ body.dark-mode .footer p {
 
 .fade-in {
     animation: fadeIn 0.6s ease forwards;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.75rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+body.dark-mode .back-to-top {
+    background: #e6e6e6;
+    color: #1a1a1a;
+}
+
+.back-to-top:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .back-to-top:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Button Styles - More Rounded */
+.btn {
+    display: inline-block;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px; /* More rounded */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background: #333;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.3);
+}
+
+body.dark-mode .btn-primary {
+    background: #e6e6e6;
+    color: #1a1a1a;
+}
+
+.btn-primary:hover {
+    background: #555;
+    box-shadow: 0 8px 20px rgba(51, 51, 51, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #333;
+    border: 2px solid #333; /* Outlined button */
+}
+
+body.dark-mode .btn-secondary {
+    color: #e6e6e6;
+    border-color: #e6e6e6;
+}
+
+.btn-secondary:hover {
+    background: rgba(51, 51, 51, 0.05);
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: rgba(230, 230, 230, 0.1);
+}
+
+/* Social icons in about section */
+#about [class*="fa-"] {
+    transition: color 0.3s ease;
+}
+
+body.dark-mode #about [class*="fa-"] {
+    color: #e6e6e6;
 }
 
 /* Smooth transitions */
