@@ -1317,6 +1317,26 @@
     box-shadow: none !important;
     right: auto !important;
   }
+
+  .back-to-top {
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    padding: 0.75rem;
+    display: flex !important;
+  }
+
+  .whatsapp-float {
+    bottom: 2rem;
+    right: 80px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    padding: 0.75rem;
+    display: flex !important;
+  }
 }
 
 /* Responsive Mobile Styles */
@@ -1510,15 +1530,16 @@
   }
 
   .back-to-top {
-    bottom: 7rem;
+    bottom: 8rem;
     right: 1.5rem;
     width: 45px;
     height: 45px;
     padding: 0.6rem;
+    display: flex !important;
   }
 
   .whatsapp-float {
-    bottom: 8.5rem;
+    bottom: 2rem;
     right: 1.5rem;
     width: 45px;
     height: 45px;
@@ -1555,14 +1576,15 @@
   }
 
   .back-to-top {
-    bottom: 6.5rem;
+    bottom: 7.5rem;
     right: 1.2rem;
     width: 40px;
     height: 40px;
+    display: flex !important;
   }
 
   .whatsapp-float {
-    bottom: 7.8rem;
+    bottom: 2rem;
     right: 1.2rem;
     width: 40px;
     height: 40px;
