@@ -142,6 +142,16 @@ body.dark-mode .social-icons a:hover {
   align-items: center;
 }
 
+.about-text h2 {
+  margin-bottom: 1.5rem;
+}
+
+.profile-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 /* Minimalist Clean Design - Inspired by seanoshea.me */
 /* Reset and base styles */
 * {
@@ -603,7 +613,7 @@ body.dark-mode .tag {
 /* Contact form */
 .contact-form {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 3rem;
   padding: 2rem;
   background: #f8f8f8;
   border-radius: 8px;
