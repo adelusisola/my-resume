@@ -1,3 +1,22 @@
+/* Research Section */
+.research-content {
+    margin-top: 2rem;
+}
+
+.research-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+body.dark-mode .research-content h3 {
+    color: #e6e6e6;
+}
+
+.research-content ul {
+    margin-bottom: 2rem;
+}
+
 /* Additional styles for table layouts */
 .cv-table {
     width: 100%;
@@ -232,10 +251,17 @@ body.dark-mode .logo {
     color: #e6e6e6;
 }
 
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 .nav {
     display: flex;
     gap: 2rem;
     align-items: center;
+    margin-right: auto; /* This pushes the contact button to the right */
 }
 
 .nav-link {
@@ -393,6 +419,14 @@ body.dark-mode .theme-toggle:hover {
     text-decoration: none;
     font-weight: 500;
     text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn i {
+    font-size: 0.8em;
 }
 
 .btn:hover {
@@ -697,7 +731,7 @@ body.dark-mode .footer p {
         padding: 0.5rem 15px;
     }
     
-    .nav {
+    .nav-container {
         position: fixed;
         top: 0;
         right: -100%;
@@ -714,12 +748,28 @@ body.dark-mode .footer p {
         z-index: 999;
     }
     
-    body.dark-mode .nav {
+    body.dark-mode .nav-container {
         background: rgba(26, 26, 26, 0.95);
     }
     
-    .nav.active {
+    .nav-container.active {
         right: 0;
+    }
+    
+    .nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 2rem;
+        margin-right: 0;
+    }
+    
+    .nav-contact-btn {
+        margin-top: 1rem;
+        width: 80%;
+        max-width: 200px;
+        justify-self: center;
     }
     
     .hamburger-menu {
@@ -740,10 +790,6 @@ body.dark-mode .footer p {
     
     .nav-link {
         font-size: 1.1rem;
-    }
-    
-    .nav-contact-btn {
-        margin-top: 1rem;
     }
     
     .about-content {

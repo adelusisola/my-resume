@@ -40,11 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // Hamburger menu functionality
 function initHamburgerMenu() {
     const hamburger = document.querySelector('.hamburger-menu');
-    const nav = document.querySelector('.nav');
+    const navContainer = document.querySelector('.nav-container');
     
-    if (hamburger && nav) {
+    if (hamburger && navContainer) {
         hamburger.addEventListener('click', () => {
-            nav.classList.toggle('active');
+            navContainer.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
         
@@ -52,15 +52,24 @@ function initHamburgerMenu() {
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                nav.classList.remove('active');
+                navContainer.classList.remove('active');
                 hamburger.classList.remove('active');
             });
         });
         
+        // Close menu when clicking on contact button
+        const contactBtn = document.querySelector('.nav-contact-btn');
+        if (contactBtn) {
+            contactBtn.addEventListener('click', () => {
+                navContainer.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        }
+        
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
-                nav.classList.remove('active');
+            if (!hamburger.contains(e.target) && !navContainer.contains(e.target)) {
+                navContainer.classList.remove('active');
                 hamburger.classList.remove('active');
             }
         });
