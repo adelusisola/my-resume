@@ -5,14 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELE-ADELUSI OLUWANISOLA JOSHUA - UI/UX Designer & Research Aspirant</title>
     <link rel="stylesheet" href="minimal-style.css">
+    <style>
+        /* Additional styles for table layouts */
+        .cv-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+        
+        .cv-table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid #333;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .cv-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        
+        .cv-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .cv-table tr:hover td {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        
+        body.dark-mode .cv-table th {
+            border-bottom: 2px solid #e6e6e6;
+            color: #e6e6e6;
+        }
+        
+        body.dark-mode .cv-table td {
+            border-bottom: 1px solid #333;
+        }
+        
+        body.dark-mode .cv-table tr:hover td {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .date-column {
+            width: 25%;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        body.dark-mode .date-column {
+            color: #aaa;
+        }
+        
+        .content-column {
+            width: 75%;
+        }
+        
+        .section-table {
+            margin: 2rem 0;
+        }
+        
+        .section-title-row {
+            background-color: #f8f8f8;
+            border-left: 4px solid #333;
+        }
+        
+        body.dark-mode .section-title-row {
+            background-color: #2a2a2a;
+            border-left: 4px solid #e6e6e6;
+        }
+        
+        .section-title-cell {
+            padding: 1rem !important;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .skill-category {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="header-content">
             <a href="/" class="logo">DELE-ADELUSI OLUWANISOLA JOSHUA</a>
             <nav class="nav">
-                <a href="#work" class="nav-link">Work</a>
-                <a href="#about" class="nav-link">About</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
             <button id="theme-toggle" class="theme-toggle">☀️</button>
@@ -27,46 +119,173 @@
             </div>
         </section>
 
-        <section id="work" class="section">
+        <section id="education" class="section">
             <div class="container">
-                <h2 class="section-title">Selected Work</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <h3 class="portfolio-title">Cloud-based OPAC System</h3>
-                        <p class="portfolio-description">Designed and developed a cloud-based Online Public Access Catalogue with integrated open knowledge resources for academic libraries in Nigeria.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Research Project</span>
-                            <span class="tag">Information Systems</span>
-                            <span class="tag">Library Science</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <h3 class="portfolio-title">University Portal Design</h3>
-                        <p class="portfolio-description">Led design and development of comprehensive university portal for Gerar University of Medical Sciences, enabling academic processes for students, faculty, and staff.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Product Design</span>
-                            <span class="tag">UI/UX</span>
-                            <span class="tag">Education</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <h3 class="portfolio-title">E-commerce Fashion Platform</h3>
-                        <p class="portfolio-description">Spearheaded comprehensive redesign of Tunisian Fashion e-commerce store, transforming legacy website into modern, sleek online store.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">UI Design</span>
-                            <span class="tag">E-commerce</span>
-                            <span class="tag">Product</span>
-                        </div>
-                    </div>
-                </div>
+                <h2 class="section-title">Education</h2>
+                
+                <table class="cv-table section-table">
+                    <tr class="section-title-row">
+                        <td colspan="2" class="section-title-cell">Education & Academic Achievements</td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">2021</td>
+                        <td class="content-column">
+                            <strong>Bachelor of Library and Information Science</strong><br>
+                            University of Ilorin, Nigeria<br>
+                            <em>First Class Honours (4.52/5.00 CGPA)</em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">2016</td>
+                        <td class="content-column">
+                            <strong>West African Senior School Certificate</strong><br>
+                            Methodist High School, Oyo, Nigeria<br>
+                            <em>Five credits including Mathematics and English at first sitting</em>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </section>
 
-        <section id="about" class="section">
+        <section id="experience" class="section">
             <div class="container">
-                <h2 class="section-title">About</h2>
-                <p>First-class graduate in library and information science with proven technical skills in UX/UI design and web development. I combine a strong academic background in information management with professional experience in digital product design. I simplify complex digital interactions, transforming them into accessible digital interfaces with a proven track record of creating user-centred digital solutions across the education, fintech, and e-commerce sectors.</p>
-                <p>Currently seeking research PhD opportunities to further explore the intersection of information science, user experience design, and digital systems. My goal is to contribute to academic research that addresses real-world challenges in information access, digital literacy, and human-computer interaction.</p>
+                <h2 class="section-title">Work Experience</h2>
+                
+                <table class="cv-table section-table">
+                    <tr class="section-title-row">
+                        <td colspan="2" class="section-title-cell">Professional Experience</td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">2021 - Present</td>
+                        <td class="content-column">
+                            <strong>UX Researcher & Product Designer</strong><br>
+                            Self-Employed<br>
+                            <ul style="margin-top: 0.5rem;">
+                                <li>Conduct user research and design user-centered digital solutions for education, fintech, and e-commerce sectors</li>
+                                <li>Create wireframes, prototypes, and high-fidelity designs using industry-standard tools</li>
+                                <li>Implement designs using modern web technologies (HTML, CSS, JavaScript, React)</li>
+                                <li>Lead design projects from concept to deployment</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">2019 - 2021</td>
+                        <td class="content-column">
+                            <strong>Research Assistant</strong><br>
+                            University of Ilorin Library, Nigeria<br>
+                            <ul style="margin-top: 0.5rem;">
+                                <li>Assisted in research projects related to digital libraries and information systems</li>
+                                <li>Managed database systems and digital cataloging processes</li>
+                                <li>Provided training on digital literacy to students and faculty</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                
+                <table class="cv-table section-table">
+                    <tr class="section-title-row">
+                        <td colspan="2" class="section-title-cell">Core Competencies</td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">Design & UX</td>
+                        <td class="content-column">
+                            <div class="skills-grid">
+                                <div>
+                                    <div class="skill-category">Design Tools</div>
+                                    <div>Figma, Adobe XD, Sketch, Photoshop</div>
+                                </div>
+                                <div>
+                                    <div class="skill-category">UX Research</div>
+                                    <div>User Interviews, Usability Testing, Personas</div>
+                                </div>
+                                <div>
+                                    <div class="skill-category">Prototyping</div>
+                                    <div>Wireframing, Interactive Prototypes</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">Development</td>
+                        <td class="content-column">
+                            <div class="skills-grid">
+                                <div>
+                                    <div class="skill-category">Frontend</div>
+                                    <div>HTML, CSS, JavaScript, React, Vue.js</div>
+                                </div>
+                                <div>
+                                    <div class="skill-category">Backend</div>
+                                    <div>Node.js, Python, PHP</div>
+                                </div>
+                                <div>
+                                    <div class="skill-category">Other</div>
+                                    <div>Git, Webpack, Responsive Design</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">Research & Analysis</td>
+                        <td class="content-column">
+                            <div class="skills-grid">
+                                <div>
+                                    <div class="skill-category">Research</div>
+                                    <div>Academic Research, Data Analysis</div>
+                                </div>
+                                <div>
+                                    <div class="skill-category">Information Science</div>
+                                    <div>Digital Libraries, Knowledge Management</div>
+                                </div>
+                                <div>
+                                    <div class="skill-category">Languages</div>
+                                    <div>English (Fluent), Yoruba (Native)</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                
+                <table class="cv-table section-table">
+                    <tr class="section-title-row">
+                        <td colspan="2" class="section-title-cell">Selected Projects</td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">2023</td>
+                        <td class="content-column">
+                            <strong>Cloud-based OPAC System</strong><br>
+                            <em>Research Project & Information System</em><br>
+                            Designed and developed a cloud-based Online Public Access Catalogue with integrated open knowledge resources for academic libraries in Nigeria. This project combined my expertise in library science with modern web development techniques.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">2022</td>
+                        <td class="content-column">
+                            <strong>University Portal Design</strong><br>
+                            <em>Product Design & Development</em><br>
+                            Led design and development of comprehensive university portal for Gerar University of Medical Sciences, enabling academic processes for students, faculty, and staff. The project streamlined administrative processes and improved user experience.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">2021</td>
+                        <td class="content-column">
+                            <strong>E-commerce Fashion Platform</strong><br>
+                            <em>UI Design & Product Redesign</em><br>
+                            Spearheaded comprehensive redesign of Tunisian Fashion e-commerce store, transforming legacy website into modern, sleek online store. The redesign resulted in improved user engagement and conversion rates.
+                        </td>
+                    </tr>
+                </table>
             </div>
         </section>
     </main>
