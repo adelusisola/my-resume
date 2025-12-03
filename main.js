@@ -34,6 +34,45 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Hamburger menu functionality
+function initHamburgerMenu() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navContainer = document.querySelector('.nav-container');
+    
+    if (hamburger && navContainer) {
+        hamburger.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navContainer.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking on contact button
+        const contactBtn = document.querySelector('.nav-contact-btn');
+        if (contactBtn) {
+            contactBtn.addEventListener('click', () => {
+                navContainer.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navContainer.contains(e.target)) {
+                navContainer.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+    }
+}
+
 // Form submission for contact page
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {

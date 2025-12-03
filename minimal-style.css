@@ -1,3 +1,111 @@
+/* Research Section */
+.research-content {
+    margin-top: 2rem;
+}
+
+.research-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+body.dark-mode .research-content h3 {
+    color: #e6e6e6;
+}
+
+.research-content ul {
+    margin-bottom: 2rem;
+}
+
+/* Additional styles for table layouts */
+.cv-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 1rem;
+}
+
+.cv-table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid #333;
+    font-weight: 500;
+    color: #333;
+}
+
+.cv-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+.cv-table tr:last-child td {
+    border-bottom: none;
+}
+
+.cv-table tr:hover td {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+body.dark-mode .cv-table th {
+    border-bottom: 2px solid #e6e6e6;
+    color: #e6e6e6;
+}
+
+body.dark-mode .cv-table td {
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode .cv-table tr:hover td {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.date-column {
+    width: 25%;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+body.dark-mode .date-column {
+    color: #aaa;
+}
+
+.content-column {
+    width: 75%;
+}
+
+.section-table {
+    margin: 2rem 0;
+}
+
+.section-title-row {
+    background-color: #f8f8f8;
+    border-left: 4px solid #333;
+}
+
+body.dark-mode .section-title-row {
+    background-color: #2a2a2a;
+    border-left: 4px solid #e6e6e6;
+}
+
+.section-title-cell {
+    padding: 1rem !important;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.skill-category {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
 /* Minimalist Clean Design - Inspired by seanoshea.me */
 /* Reset and base styles */
 * {
@@ -143,9 +251,17 @@ body.dark-mode .logo {
     color: #e6e6e6;
 }
 
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 .nav {
     display: flex;
     gap: 2rem;
+    align-items: center;
+    margin-right: auto; /* This pushes the contact button to the right */
 }
 
 .nav-link {
@@ -235,6 +351,14 @@ body.dark-mode .theme-toggle:hover {
     text-decoration: none;
     font-weight: 500;
     text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn i {
+    font-size: 0.8em;
 }
 
 .btn:hover {
@@ -539,10 +663,78 @@ body.dark-mode .footer p {
         padding: 0.5rem 15px;
     }
     
+    .nav-container {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 80px;
+        transition: right 0.3s ease;
+        gap: 2rem;
+        z-index: 999;
+    }
+    
+    body.dark-mode .nav-container {
+        background: rgba(26, 26, 26, 0.95);
+    }
+    
+    .nav-container.active {
+        right: 0;
+    }
+    
     .nav {
-        gap: 0.8rem;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 2rem;
+        margin-right: 0;
+    }
+    
+    .nav-contact-btn {
+        margin-top: 1rem;
+        width: 80%;
+        max-width: 200px;
+        justify-self: center;
+    }
+    
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    .nav-link {
+        font-size: 1.1rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .about-image {
+        order: 1; /* Image comes first on mobile */
+    }
+    
+    .about-text {
+        order: 2; /* Text comes second on mobile */
     }
     
     .hero {
