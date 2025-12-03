@@ -117,6 +117,25 @@ git push origin main
 
 Then enable in repo Settings → Pages
 
+### Automatic deploy (GitHub Actions)
+
+This repository includes a workflow that builds Tailwind CSS and deploys to GitHub Pages on push to `main` using the official Pages deploy actions. No extra configuration is necessary for GitHub Pages if you already have the repository connected; enable Pages in repository settings.
+
+### Generate a quick visual preview (PNG)
+
+If you'd like a PNG of the hero preview, you can open `preview-hero.html` in your browser and take a screenshot, or run Chrome headless to capture it automatically:
+
+Mac (Chrome):
+```bash
+# open the preview in headless Chrome and save screenshot
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu --screenshot=hero.png --window-size=1200,800 "file://$PWD/preview-hero.html"
+```
+
+Node + Puppeteer (optional):
+1. `npm install puppeteer --save-dev`
+2. Create `screenshot.js` with a simple script to load `preview-hero.html` and save `hero.png`.
+
+
 ### Other Platforms
 - Netlify (drag & drop)
 - Vercel (auto-deploy)
