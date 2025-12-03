@@ -10,130 +10,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <style>
-      /* Additional styles for table layouts */
-      .cv-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 2rem 0;
-        font-size: 1rem;
-      }
-
-      .cv-table th {
-        text-align: left;
-        padding: 0.75rem 1rem;
-        border-bottom: 2px solid #333;
-        font-weight: 500;
-        color: #333;
-      }
-
-      .cv-table td {
-        padding: 0.75rem 1rem;
-        border-bottom: 1px solid #eee;
-        vertical-align: top;
-      }
-
-      .cv-table tr:last-child td {
-        border-bottom: none;
-      }
-
-      .cv-table tr:hover td {
-        background-color: rgba(0, 0, 0, 0.02);
-      }
-
-      body.dark-mode .cv-table th {
-        border-bottom: 2px solid #e6e6e6;
-        color: #e6e6e6;
-      }
-
-      body.dark-mode .cv-table td {
-        border-bottom: 1px solid #333;
-      }
-
-      body.dark-mode .cv-table tr:hover td {
-        background-color: rgba(255, 255, 255, 0.05);
-      }
-
-      .date-column {
-        width: 25%;
-        color: #666;
-        font-size: 0.9rem;
-      }
-
-      body.dark-mode .date-column {
-        color: #aaa;
-      }
-
-      .content-column {
-        width: 75%;
-      }
-
-      .section-table {
-        margin: 2rem 0;
-      }
-
-      .section-title-row {
-        background-color: #f8f8f8;
-        border-left: 4px solid #333;
-      }
-
-      body.dark-mode .section-title-row {
-        background-color: #2a2a2a;
-        border-left: 4px solid #e6e6e6;
-      }
-
-      .section-title-cell {
-        padding: 1rem !important;
-        font-weight: 600;
-        font-size: 1.2rem;
-      }
-
-      .skill-category {
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
-
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-
-      .social-icons {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1.5rem;
-      }
-
-      .social-icons a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: #333;
-        color: white;
-        text-decoration: none;
-        font-size: 1.2rem;
-        transition: all 0.3s ease;
-      }
-
-      body.dark-mode .social-icons a {
-        background-color: #e6e6e6;
-        color: #333;
-      }
-
-      .social-icons a:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      body.dark-mode .social-icons a:hover {
-        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-      }
-    </style>
   </head>
   <body>
     <header class="header">
@@ -175,14 +51,7 @@
             interests in Digital Libraries, Information Architecture, and User
             Experience Design.
           </p>
-          <div
-            style="
-              margin-top: 2rem;
-              display: flex;
-              gap: 1rem;
-              justify-content: center;
-            "
-          >
+          <div class="hero-buttons">
             <a href="contact.html" class="btn btn-primary">Contact Me</a>
             <a
               href="https://drive.google.com/file/d/15wRWuAfqMLGLId9PV8rskeqATruHHuLe/view?usp=sharing"
@@ -797,16 +666,9 @@
               display: grid;
               grid-template-columns: 1fr 1fr;
               gap: 3rem;
-              align-items: center;
-            "
-          >
-            <div>
-              <h2 class="section-title">Who am I</h2>
-              <h3>DELE-ADELUSI OLUWANISOLA JOSHUA</h3>
-              <p>
-                First-class graduate in Library and Information Science with a
-                passion for creating intuitive digital experiences. I blend my
-                academic foundation in information management with practical
+      <section id="about" class="section">
+        <div class="container">
+          <div class="about-grid">     academic foundation in information management with practical
                 skills in UX/UI design and web development to solve complex
                 information problems.
               </p>
@@ -874,7 +736,7 @@
 
     <!-- Floating WhatsApp Button -->
     <a
-      href="https://wa.me/2348012345678"
+      href="https://wa.me/2348109957139"
       target="_blank"
       class="whatsapp-float"
       title="Chat on WhatsApp"
