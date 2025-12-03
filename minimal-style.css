@@ -542,6 +542,30 @@ body.dark-mode #about h3 {
   color: #aaa;
 }
 
+/* About section container and layout */
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-profile-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .about-profile-image {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
 /* Portfolio styles */
 .portfolio-grid {
   display: grid;
@@ -803,7 +827,7 @@ body.dark-mode .footer p {
     padding: 2.5rem 0;
   }
 
-  #about .about-grid {
+  .about-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
