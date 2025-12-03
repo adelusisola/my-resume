@@ -101,6 +101,16 @@ body.dark-mode .header {
     color: #333;
 }
 
+.contact-details {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+body.dark-mode .contact-details {
+    color: #aaa;
+}
+
 body.dark-mode .logo {
     color: #e6e6e6;
 }
