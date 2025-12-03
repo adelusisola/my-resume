@@ -1224,20 +1224,20 @@
     height: 45px;
     padding: 0.6rem;
   }
+  .whatsapp-float {
+    bottom: 5.25rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+    padding: 0.6rem;
+  }
   .back-to-top {
-    bottom: 8rem;
+    bottom: 9rem;
     right: 1.5rem;
     width: 45px;
     height: 45px;
     padding: 0.6rem;
     display: flex !important;
-  }
-  .whatsapp-float {
-    bottom: 2rem;
-    right: 1.5rem;
-    width: 45px;
-    height: 45px;
-    padding: 0.6rem;
   }
 }
 @media (max-width: 480px) {
@@ -1262,18 +1262,18 @@
     width: 40px;
     height: 40px;
   }
+  .whatsapp-float {
+    bottom: 4.8rem;
+    right: 1.2rem;
+    width: 40px;
+    height: 40px;
+  }
   .back-to-top {
-    bottom: 7.5rem;
+    bottom: 8.4rem;
     right: 1.2rem;
     width: 40px;
     height: 40px;
     display: flex !important;
-  }
-  .whatsapp-float {
-    bottom: 2rem;
-    right: 1.2rem;
-    width: 40px;
-    height: 40px;
   }
   .hero .btn {
     width: 95%;
