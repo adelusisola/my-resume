@@ -32,40 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             el.classList.add('fade-in');
         }, 150 * index);
     });
-    
-    // Initialize hamburger menu functionality
-    initHamburgerMenu();
 });
-
-// Hamburger menu functionality
-function initHamburgerMenu() {
-    const hamburger = document.querySelector('.hamburger-menu');
-    const nav = document.querySelector('.nav');
-    
-    if (hamburger && nav) {
-        hamburger.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-        
-        // Close menu when clicking on a nav link
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
-                nav.classList.remove('active');
-                hamburger.classList.remove('active');
-            }
-        });
-    }
-}
 
 // Form submission for contact page
 const contactForm = document.getElementById('contactForm');
@@ -74,46 +41,25 @@ if (contactForm) {
         e.preventDefault();
         
         // Get form values
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const subject = document.getElementById('subject').value.trim();
-        const message = document.getElementById('message').value.trim();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
         
-        // Validation
-        let errors = [];
-        
-        if (!name) {
-            errors.push('Name is required.');
+        // Basic validation
+        if (!name || !email || !subject || !message) {
+            alert('Please fill in all fields.');
+            return;
         }
         
-        if (!email) {
-            errors.push('Email is required.');
-        } else {
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                errors.push('Please enter a valid email address.');
-            }
-        }
-        
-        if (!subject) {
-            errors.push('Subject is required.');
-        }
-        
-        if (!message) {
-            errors.push('Message is required.');
-        } else if (message.length < 10) {
-            errors.push('Message should be at least 10 characters long.');
-        }
-        
-        // Display errors if any
-        if (errors.length > 0) {
-            alert(errors.join('\n'));
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
             return;
         }
         
         // In a real implementation, you would send this data to a server
-        // For now, we'll just show a success message and reset the form
         console.log({name, email, subject, message});
         
         // Show success message
@@ -121,34 +67,7 @@ if (contactForm) {
         
         // Reset form
         this.reset();
-        
-        // Send email using a service like EmailJS (in a real implementation)
-        // sendEmail(name, email, subject, message);
     });
-}
-
-// Function to send email using EmailJS (example implementation)
-function sendEmail(name, email, subject, message) {
-    // This is a placeholder for actual email sending functionality
-    // In a real implementation, you would use EmailJS, Formspree, or similar service
-    console.log('Sending email:', {name, email, subject, message});
-    
-    // Example EmailJS implementation (uncomment and configure with your EmailJS details):
-    /*
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-        from_name: name,
-        from_email: email,
-        subject: subject,
-        message: message
-    }).then(function(response) {
-        console.log('SUCCESS!', response.status, response.text);
-        alert('Message sent successfully!');
-        document.getElementById('contactForm').reset();
-    }, function(error) {
-        console.log('FAILED...', error);
-        alert('Failed to send message. Please try again.');
-    });
-    */
 }
 
 // Back to Top Button functionality
