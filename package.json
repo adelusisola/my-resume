@@ -8,6 +8,7 @@
     "watch:css": "tailwindcss -i ./input.css -o ./styles.css --watch",
     "dev": "tailwindcss -i ./input.css -o ./styles.css --watch",
     "build": "tailwindcss -i ./input.css -o ./styles.css",
+    "screenshot": "node screenshot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +26,7 @@
     "@tailwindcss/cli": "^4.1.17",
     "autoprefixer": "^10.4.22",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.1.17",
+    "puppeteer": "^20.0.0"
   }
 }

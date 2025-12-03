@@ -16,7 +16,7 @@ A modern, responsive portfolio website showcasing professional qualifications, s
 ✅ **Mobile Hamburger Menu** - Smooth animations and interactions  
 ✅ **Contact Form** - Real-time validation with FormSpree backend  
 ✅ **Professional Typography** - Playfair Display + IBM Plex Sans  
-✅ **Back-to-Top Button** - Smooth scroll functionality  
+✅ **Back-to-Top Button** - Smooth scroll functionality
 
 ---
 
@@ -29,6 +29,7 @@ A modern, responsive portfolio website showcasing professional qualifications, s
 - **Google Fonts** - Professional typography
 
 ### Build Tools
+
 - Tailwind CLI
 - PostCSS
 - npm
@@ -38,6 +39,7 @@ A modern, responsive portfolio website showcasing professional qualifications, s
 ## 📦 Installation
 
 ### Prerequisites
+
 - Node.js 14+ and npm
 
 ### Setup
@@ -61,11 +63,11 @@ npm run watch:css
 
 ## 📜 Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run build:css` | Build Tailwind CSS |
+| Command             | Description                  |
+| ------------------- | ---------------------------- |
+| `npm run build:css` | Build Tailwind CSS           |
 | `npm run watch:css` | Watch and rebuild on changes |
-| `npm run dev` | Development mode (watch) |
+| `npm run dev`       | Development mode (watch)     |
 
 ---
 
@@ -90,10 +92,13 @@ my-resume/
 ## 🎨 Customization
 
 ### Content
+
 Edit `index.html` and `contact.html` with your information
 
 ### Colors
+
 Update `tailwind.config.cjs`:
+
 ```javascript
 colors: {
   "dark-bg": "#1a1a1a",
@@ -102,6 +107,7 @@ colors: {
 ```
 
 ### Fonts
+
 Update Google Fonts import in `input.css` and `tailwind.config.cjs`
 
 ---
@@ -109,6 +115,7 @@ Update Google Fonts import in `input.css` and `tailwind.config.cjs`
 ## 🚀 Deployment
 
 ### GitHub Pages
+
 ```bash
 git add -A
 git commit -m "Update portfolio"
@@ -126,17 +133,28 @@ This repository includes a workflow that builds Tailwind CSS and deploys to GitH
 If you'd like a PNG of the hero preview, you can open `preview-hero.html` in your browser and take a screenshot, or run Chrome headless to capture it automatically:
 
 Mac (Chrome):
+
 ```bash
 # open the preview in headless Chrome and save screenshot
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu --screenshot=hero.png --window-size=1200,800 "file://$PWD/preview-hero.html"
 ```
 
 Node + Puppeteer (optional):
+
 1. `npm install puppeteer --save-dev`
 2. Create `screenshot.js` with a simple script to load `preview-hero.html` and save `hero.png`.
+3. Or simply run the bundled npm script:
 
+```bash
+# Install dependencies (if not already)
+npm ci
+
+# Run the screenshot script (creates `hero.png`)
+npm run screenshot
+```
 
 ### Other Platforms
+
 - Netlify (drag & drop)
 - Vercel (auto-deploy)
 - Traditional hosting (FTP/SFTP)
@@ -180,7 +198,7 @@ Uses **FormSpree** for email backend:
 2. Get your form ID
 3. Update in `main.js`:
    ```javascript
-   contactForm.setAttribute('action', 'https://formspree.io/f/YOUR_ID');
+   contactForm.setAttribute("action", "https://formspree.io/f/YOUR_ID");
    ```
 
 ---
@@ -206,9 +224,10 @@ ISC License - Feel free to use as a template
 **DELE-ADELUSI OLUWANISOLA JOSHUA**  
 📧 adelusisola@gmail.com  
 📱 +234 810 9957 139  
-📍 Lagos, Nigeria  
+📍 Lagos, Nigeria
 
 **Links:**
+
 - [LinkedIn](https://www.linkedin.com/in/dele-adelusi-oluwanisola/)
 - [GitHub](https://github.com/adelusisola)
 - [Twitter](https://x.com/Nisola_Adelusi)
