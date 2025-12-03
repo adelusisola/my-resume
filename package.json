@@ -1,0 +1,30 @@
+{
+  "name": "my-resume",
+  "version": "1.0.0",
+  "description": "A detailed Resume of Oluwanisola Dele-Adelusi Joshua showing his qualifications, skills and journey so far.",
+  "main": "main.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./input.css -o ./styles.css",
+    "watch:css": "tailwindcss -i ./input.css -o ./styles.css --watch",
+    "dev": "tailwindcss -i ./input.css -o ./styles.css --watch",
+    "build": "tailwindcss -i ./input.css -o ./styles.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adelusisola/my-resume.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adelusisola/my-resume/issues"
+  },
+  "homepage": "https://github.com/adelusisola/my-resume#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17"
+  }
+}
