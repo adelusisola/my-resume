@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact - DELE-ADELUSI OLUWANISOLA JOSHUA</title>
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1a1a1a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Nisola" />
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -55,46 +68,82 @@
           <div class="contact-form">
             <form id="contactForm" class="contact-form">
               <div class="form-group">
-                <label for="name" class="form-label">Name</label>
+                <label for="name" class="form-label"
+                  >Name <span aria-label="required">*</span></label
+                >
                 <input
                   type="text"
                   id="name"
                   name="name"
                   class="form-input"
+                  aria-describedby="name-error"
                   required
                 />
+                <span
+                  id="name-error"
+                  role="alert"
+                  class="form-error"
+                  style="display: none"
+                ></span>
               </div>
 
               <div class="form-group">
-                <label for="email" class="form-label">Email</label>
+                <label for="email" class="form-label"
+                  >Email <span aria-label="required">*</span></label
+                >
                 <input
                   type="email"
                   id="email"
                   name="email"
                   class="form-input"
+                  aria-describedby="email-error"
                   required
                 />
+                <span
+                  id="email-error"
+                  role="alert"
+                  class="form-error"
+                  style="display: none"
+                ></span>
               </div>
 
               <div class="form-group">
-                <label for="subject" class="form-label">Subject</label>
+                <label for="subject" class="form-label"
+                  >Subject <span aria-label="required">*</span></label
+                >
                 <input
                   type="text"
                   id="subject"
                   name="subject"
                   class="form-input"
+                  aria-describedby="subject-error"
                   required
                 />
+                <span
+                  id="subject-error"
+                  role="alert"
+                  class="form-error"
+                  style="display: none"
+                ></span>
               </div>
 
               <div class="form-group">
-                <label for="message" class="form-label">Message</label>
+                <label for="message" class="form-label"
+                  >Message <span aria-label="required">*</span></label
+                >
                 <textarea
                   id="message"
                   name="message"
                   class="form-input form-textarea"
+                  aria-describedby="message-error"
                   required
                 ></textarea>
+                <span
+                  id="message-error"
+                  role="alert"
+                  class="form-error"
+                  style="display: none"
+                ></span>
               </div>
 
               <button type="submit" class="btn btn-primary">

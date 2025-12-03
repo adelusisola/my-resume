@@ -2,6 +2,9 @@
 .container {
   width: 100%;
 }
+.block {
+  display: block;
+}
 .grid {
   display: grid;
 }
@@ -563,9 +566,34 @@
   .form-input:focus {
     outline: none;
     border-color: #333;
+    box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1);
+  }
+  .form-input:focus-visible {
+    outline: 2px solid #333;
+    outline-offset: 2px;
   }
   body.dark-mode .form-input:focus {
     border-color: #e6e6e6;
+    box-shadow: 0 0 0 3px rgba(230, 230, 230, 0.1);
+  }
+  body.dark-mode .form-input:focus-visible {
+    outline-color: #e6e6e6;
+  }
+  .form-error {
+    display: block;
+    color: #d32f2f;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  body.dark-mode .form-error {
+    color: #ff6b6b;
+  }
+  button:focus-visible, a:focus-visible {
+    outline: 2px solid #333;
+    outline-offset: 2px;
+  }
+  body.dark-mode button:focus-visible, body.dark-mode a:focus-visible {
+    outline-color: #e6e6e6;
   }
   .form-textarea {
     min-height: 120px;

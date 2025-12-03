@@ -1,37 +1,34 @@
-```gitignore
-# Compiled and build artifacts
-*.pyc
-__pycache__/
-*.o
-*.obj
-*.class
-*.dll
-*.so
-*.a
-*.exe
-*.out
-
 # Dependencies
 node_modules/
-venv/
-.venv/
-.env
-.env.local
-.env.*
+package-lock.json
+yarn.lock
 
-# Build directories
+# Build output & generated files
+styles.css
 dist/
 build/
-target/
-*.log
-*.tmp
-*.swp
 
-# Editors
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE & Editor
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
 
-# System files
+# System & OS files
 .DS_Store
 Thumbs.db
-```
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
