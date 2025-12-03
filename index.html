@@ -24,14 +24,34 @@
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
+        <div class="theme-toggle-container">
+            <button class="theme-toggle" id="theme-toggle" title="Toggle dark/light mode">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
         <nav class="main-nav" id="main-nav">
             <a href="#about" class="nav-link">About</a>
             <a href="#skills" class="nav-link">Skills</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
             <a href="#experience" class="nav-link">Experience</a>
             <a href="#education" class="nav-link">Education</a>
+            <a href="#blog" class="nav-link">Blog</a>
             <a href="public/contact.html" class="nav-link">Contact</a>
         </nav>
     </header>
+    
+    <!-- Loading spinner -->
+    <div class="loading-spinner" id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Cookie consent banner -->
+    <div class="cookie-consent" id="cookie-consent">
+        <p>We use cookies to improve your experience. By continuing to use our site, you accept our use of cookies.</p>
+        <button class="cookie-btn" id="accept-cookies">Accept</button>
+        <button class="cookie-btn" id="decline-cookies">Decline</button>
+    </div>
 
     <main class="main-content">
         <section class="hero">
@@ -98,6 +118,222 @@
                             <li>WordPress</li>
                             <li>Google Workspace</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio section -->
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <h2>Portfolio</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="assets/images/project1.jpg" alt="E-commerce Website Redesign">
+                            </div>
+                            <div class="portfolio-content">
+                                <h3>E-commerce Website Redesign</h3>
+                                <p>Complete redesign of a Tunisian fashion e-commerce store, improving user experience and conversion rates.</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">UI/UX Design</span>
+                                    <span class="tag">Figma</span>
+                                    <span class="tag">Webflow</span>
+                                </div>
+                                <div class="portfolio-actions">
+                                    <a href="#" class="btn btn-secondary">View Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="assets/images/project2.jpg" alt="University Portal">
+                            </div>
+                            <div class="portfolio-content">
+                                <h3>University Portal</h3>
+                                <p>Comprehensive university portal for Gerar University of Medical Sciences, streamlining academic processes.</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">Product Design</span>
+                                    <span class="tag">User Research</span>
+                                    <span class="tag">Figma</span>
+                                </div>
+                                <div class="portfolio-actions">
+                                    <a href="#" class="btn btn-secondary">View Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="assets/images/project3.jpg" alt="Fintech App">
+                            </div>
+                            <div class="portfolio-content">
+                                <h3>Fintech App Interface</h3>
+                                <p>User-centered design for banking and financial products in the payments sector.</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">UI Design</span>
+                                    <span class="tag">Figma</span>
+                                    <span class="tag">Prototyping</span>
+                                </div>
+                                <div class="portfolio-actions">
+                                    <a href="#" class="btn btn-secondary">View Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Visualization -->
+        <section class="skills-visualization" id="skills-visualization">
+            <div class="container">
+                <h2>Skills & Expertise</h2>
+                <div class="skills-visualization-grid">
+                    <div class="skills-category">
+                        <h3>Design Skills</h3>
+                        <div class="skill-bar">
+                            <div class="skill-item">
+                                <span class="skill-name">Design thinking</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="90">90%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">User experience (UX) design</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="95">95%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">User interface (UI) design</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="92">92%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">User research</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="85">85%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Wire framing</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="90">90%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Prototyping</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="93">93%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Site maps</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="88">88%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">User flows</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="90">90%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-bar">
+                            <div class="skill-item">
+                                <span class="skill-name">HTML</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="95">95%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">CSS</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="94">94%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="88">88%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="80">80%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Responsive Design</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="96">96%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Cross-browser Compatibility</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="90">90%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Tools</h3>
+                        <div class="skill-bar">
+                            <div class="skill-item">
+                                <span class="skill-name">Figma</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="98">98%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Webflow</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="92">92%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">VS Code</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="95">95%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Notion</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="90">90%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Slack</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="85">85%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">WordPress</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="88">88%</div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Google Workspace</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-width="95">95%</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -197,6 +433,113 @@
             </div>
         </section>
 
+        <!-- Testimonials section -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <h2>Testimonials</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Working with Oluwanisola was a game-changer for our project. Her attention to user experience and ability to translate complex requirements into intuitive interfaces was exceptional."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="assets/images/client1.jpg" alt="Client 1">
+                            </div>
+                            <div class="author-info">
+                                <h4>John Smith</h4>
+                                <p>Product Manager, TechCorp</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Her design thinking approach and attention to detail resulted in a 40% increase in user engagement for our platform. Highly recommend her services."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="assets/images/client2.jpg" alt="Client 2">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>CEO, StartupXYZ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Professional, creative, and results-driven. Oluwanisola delivered beyond our expectations and was a pleasure to work with throughout the project."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="assets/images/client3.jpg" alt="Client 3">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Brown</h4>
+                                <p>CTO, InnovateLabs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog section -->
+        <section class="blog" id="blog">
+            <div class="container">
+                <h2>Latest Articles</h2>
+                <div class="blog-grid">
+                    <article class="blog-post">
+                        <div class="blog-image">
+                            <img src="assets/images/blog1.jpg" alt="Blog post 1">
+                        </div>
+                        <div class="blog-content">
+                            <h3>Designing for User Experience: A Modern Approach</h3>
+                            <p class="blog-meta">By Oluwanisola Dele-Adelusi | June 15, 2023</p>
+                            <p>Exploring the latest trends in user experience design and how to implement them effectively in modern web applications.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="blog-post">
+                        <div class="blog-image">
+                            <img src="assets/images/blog2.jpg" alt="Blog post 2">
+                        </div>
+                        <div class="blog-content">
+                            <h3>Responsive Design Best Practices</h3>
+                            <p class="blog-meta">By Oluwanisola Dele-Adelusi | May 28, 2023</p>
+                            <p>How to create responsive websites that work seamlessly across all devices and screen sizes.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="blog-post">
+                        <div class="blog-image">
+                            <img src="assets/images/blog3.jpg" alt="Blog post 3">
+                        </div>
+                        <div class="blog-content">
+                            <h3>UI Design Trends for 2023</h3>
+                            <p class="blog-meta">By Oluwanisola Dele-Adelusi | April 12, 2023</p>
+                            <p>An overview of the most impactful UI design trends shaping the digital landscape this year.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated</h2>
+                    <p>Subscribe to my newsletter to receive updates on the latest design trends, articles, and resources.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <section class="education" id="education">
             <div class="container">
                 <h2>Education</h2>
@@ -254,6 +597,9 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Back to top button -->
+    <button class="back-to-top" id="back-to-top" title="Back to top">↑</button>
     
     <script src="script.js"></script>
 </body>

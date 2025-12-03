@@ -22,14 +22,34 @@
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
+        <div class="theme-toggle-container">
+            <button class="theme-toggle" id="theme-toggle" title="Toggle dark/light mode">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
         <nav class="main-nav" id="main-nav">
             <a href="../index.html#about" class="nav-link">About</a>
             <a href="../index.html#skills" class="nav-link">Skills</a>
+            <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
             <a href="../index.html#experience" class="nav-link">Experience</a>
             <a href="../index.html#education" class="nav-link">Education</a>
+            <a href="../index.html#blog" class="nav-link">Blog</a>
             <a href="../index.html" class="nav-link">Home</a>
         </nav>
     </header>
+    
+    <!-- Loading spinner -->
+    <div class="loading-spinner" id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Cookie consent banner -->
+    <div class="cookie-consent" id="cookie-consent">
+        <p>We use cookies to improve your experience. By continuing to use our site, you accept our use of cookies.</p>
+        <button class="cookie-btn" id="accept-cookies">Accept</button>
+        <button class="cookie-btn" id="decline-cookies">Decline</button>
+    </div>
 
     <main class="main-content">
         <section class="hero">
@@ -133,6 +153,9 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Back to top button -->
+    <button class="back-to-top" id="back-to-top" title="Back to top">↑</button>
     
     <script src="../script.js"></script>
     <script>
