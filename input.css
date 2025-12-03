@@ -454,7 +454,8 @@
     padding: 0;
     gap: 5px;
     align-items: center;
-    z-index: 1001;
+    z-index: 1101;
+    position: relative;
   }
 
   .hamburger-menu span {
