@@ -95,6 +95,69 @@
       font-size: 1.6rem;
     }
   }
+  .eyebrow {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 0.5rem;
+  }
+  .lead {
+    font-size: 1.125rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+    max-width: 70ch;
+  }
+  blockquote {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--color-heading);
+    border-left: 4px solid rgba(0, 0, 0, 0.06);
+    padding: 0.5rem 1rem;
+    margin: 1.2rem 0;
+    background: transparent;
+  }
+  body.dark-mode blockquote {
+    border-left-color: rgba(230, 230, 230, 0.06);
+  }
+  .blockquote-decor {
+    position: relative;
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: var(--color-heading);
+    padding: 1rem 1.25rem 1rem 2.5rem;
+    margin: 1.5rem 0;
+    background: rgba(0, 0, 0, 0.01);
+    border-radius: 6px;
+    border-left: 6px solid rgba(0, 0, 0, 0.06);
+  }
+  .blockquote-decor::before {
+    content: "“";
+    position: absolute;
+    left: 12px;
+    top: -6px;
+    font-size: 6rem;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.08);
+    font-family: var(--font-heading);
+    transform: translateY(-10%);
+    pointer-events: none;
+  }
+  .blockquote-decor p:first-letter {
+    float: left;
+    font-size: 3rem;
+    line-height: 0.85;
+    margin-right: 0.35rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--color-heading);
+  }
+  body.dark-mode .blockquote-decor::before {
+    color: rgba(230, 230, 230, 0.06);
+  }
   ul {
     list-style: none;
     padding-left: 0;
