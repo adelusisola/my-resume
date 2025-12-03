@@ -293,6 +293,28 @@ body.dark-mode .header {
   justify-content: space-between;
   align-items: center;
 }
+.hamburger-menu {
+  display: none; /* hidden on desktop; enabled on mobile via media query */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  gap: 6px;
+  align-items: center;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .hamburger-menu span {
+  background: #e6e6e6;
+}
 
 .logo {
   font-size: 1.2rem;
@@ -317,10 +339,11 @@ body.dark-mode .logo {
   gap: 2rem;
   align-items: center;
   flex: 1;
+  justify-content: center; /* center nav links in available space */
 }
 
 .nav-contact-btn {
-  margin-left: auto;
+  margin-left: auto; /* keep contact button at far right */
 }
 
 .nav-link {
@@ -445,6 +468,9 @@ body.dark-mode .btn-primary {
   background: transparent;
   color: #333;
   border: 2px solid #333;
+  padding: 0.65rem 1.25rem;
+  border-radius: 50px;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 body.dark-mode .btn-secondary {
@@ -458,6 +484,15 @@ body.dark-mode .btn-secondary {
 
 body.dark-mode .btn-secondary:hover {
   background: rgba(230, 230, 230, 0.1);
+}
+
+.btn-secondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 6px rgba(51, 51, 51, 0.06);
+}
+
+body.dark-mode .btn-secondary:focus {
+  box-shadow: 0 0 0 6px rgba(230, 230, 230, 0.06);
 }
 
 /* Hero buttons */
