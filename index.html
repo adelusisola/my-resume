@@ -1,607 +1,658 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oluwanisola Dele-Adelusi Joshua - Professional Portfolio</title>
-    <meta name="description" content="Professional portfolio of Oluwanisola Dele-Adelusi Joshua - UI/UX Designer and Frontend Developer">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Rahul Kumar - UI/UX Designer & Frontend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                font-family: 'Inter', system-ui, sans-serif;
+            }
+        }
+        @layer utilities {
+            .text-balance {
+                text-wrap: balance;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
-<body>
-    <header class="main-header">
-        <div class="logo">
-            <h1>DELE-ADELUSI OLUWANISOLA JOSHUA</h1>
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/80 dark:bg-gray-950/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-xl font-bold text-primary-600 dark:text-primary-400">RK</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="text-sm font-medium text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Home</a>
+                        <a href="#about" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">About</a>
+                        <a href="#portfolio" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Work</a>
+                        <a href="#blog" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Blog</a>
+                        <a href="contact.html" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Contact</a>
+                    </div>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        <i class="fas fa-bars text-gray-600 dark:text-gray-300"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <button class="hamburger" id="hamburger">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-        <div class="theme-toggle-container">
-            <button class="theme-toggle" id="theme-toggle" title="Toggle dark/light mode">
-                <span class="sun-icon">☀️</span>
-                <span class="moon-icon">🌙</span>
-            </button>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Work</a>
+                <a href="#blog" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Blog</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+            </div>
         </div>
-        <nav class="main-nav" id="main-nav">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#portfolio" class="nav-link">Portfolio</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#education" class="nav-link">Education</a>
-            <a href="#blog" class="nav-link">Blog</a>
-            <a href="public/contact.html" class="nav-link">Contact</a>
-        </nav>
     </header>
-    
-    <!-- Loading spinner -->
-    <div class="loading-spinner" id="loading-spinner">
-        <div class="spinner"></div>
-    </div>
-    
-    <!-- Cookie consent banner -->
-    <div class="cookie-consent" id="cookie-consent">
-        <p>We use cookies to improve your experience. By continuing to use our site, you accept our use of cookies.</p>
-        <button class="cookie-btn" id="accept-cookies">Accept</button>
-        <button class="cookie-btn" id="decline-cookies">Decline</button>
-    </div>
 
-    <main class="main-content">
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h2>UI/UX Designer & Frontend Developer</h2>
-                    <p>Creating intuitive digital experiences with a focus on user-centered design and clean, efficient code.</p>
-                    <div class="hero-buttons">
-                        <a href="public/contact.html" class="btn btn-primary">Get in Touch</a>
-                        <a href="#experience" class="btn btn-secondary">View Experience</a>
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
+                        Creating <span class="text-primary-600 dark:text-primary-400">Digital Experiences</span> That Inspire
+                    </h1>
+                    <p class="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                        I'm Rahul Kumar, a UI/UX Designer & Frontend Developer crafting beautiful, functional interfaces that solve real problems and delight users.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <a href="#portfolio" class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors shadow-lg hover:shadow-xl">
+                            View My Work
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                        <a href="contact.html" class="inline-flex items-center px-6 py-3 border-2 border-gray-300 dark:border-gray-600 hover:border-primary-600 text-gray-700 dark:text-gray-200 font-medium rounded-lg transition-colors">
+                            Get In Touch
+                        </a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="assets/images/Nisola's-portrait-image.jpg" alt="Portrait of Oluwanisola Dele-Adelusi Joshua" class="profile-image">
-                </div>
-            </div>
-        </section>
-
-        <section class="summary" id="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <div class="summary-content">
-                    <p>First-class graduate in library and information science with proven technical skills in UX/UI design and web development. I combine a strong academic background in information management with professional experience in digital product design. I simplify complex digital interactions, transforming them into accessible digital interfaces with a proven track record of creating user-centred digital solutions across the education, fintech, and e-commerce sectors.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="skills" id="skills">
-            <div class="container">
-                <h2>Skills & Expertise</h2>
-                <div class="skills-grid">
-                    <div class="skills-category">
-                        <h3>Design Skills</h3>
-                        <ul>
-                            <li>Design thinking</li>
-                            <li>User experience (UX) design</li>
-                            <li>User interface (UI) design</li>
-                            <li>User research</li>
-                            <li>Wire framing</li>
-                            <li>Prototyping</li>
-                            <li>Site maps</li>
-                            <li>User flows</li>
-                        </ul>
-                    </div>
-                    <div class="skills-category">
-                        <h3>Technical Skills</h3>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>Python</li>
-                            <li>Responsive Design</li>
-                            <li>Cross-browser Compatibility</li>
-                        </ul>
-                    </div>
-                    <div class="skills-category">
-                        <h3>Tools</h3>
-                        <ul>
-                            <li>Figma</li>
-                            <li>Webflow</li>
-                            <li>VS Code</li>
-                            <li>Notion</li>
-                            <li>Slack</li>
-                            <li>WordPress</li>
-                            <li>Google Workspace</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portfolio section -->
-        <section class="portfolio" id="portfolio">
-            <div class="container">
-                <h2>Portfolio</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image">
-                                <img src="assets/images/project1.jpg" alt="E-commerce Website Redesign">
-                            </div>
-                            <div class="portfolio-content">
-                                <h3>E-commerce Website Redesign</h3>
-                                <p>Complete redesign of a Tunisian fashion e-commerce store, improving user experience and conversion rates.</p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">UI/UX Design</span>
-                                    <span class="tag">Figma</span>
-                                    <span class="tag">Webflow</span>
+                <div class="relative">
+                    <div class="relative w-full h-96 md:h-[500px] rounded-2xl overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary-500 to-secondary-600 rounded-2xl transform rotate-6"></div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary-600 to-secondary-700 rounded-2xl"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <div class="w-32 h-32 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-laptop text-4xl"></i>
                                 </div>
-                                <div class="portfolio-actions">
-                                    <a href="#" class="btn btn-secondary">View Case Study</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image">
-                                <img src="assets/images/project2.jpg" alt="University Portal">
-                            </div>
-                            <div class="portfolio-content">
-                                <h3>University Portal</h3>
-                                <p>Comprehensive university portal for Gerar University of Medical Sciences, streamlining academic processes.</p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">Product Design</span>
-                                    <span class="tag">User Research</span>
-                                    <span class="tag">Figma</span>
-                                </div>
-                                <div class="portfolio-actions">
-                                    <a href="#" class="btn btn-secondary">View Case Study</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image">
-                                <img src="assets/images/project3.jpg" alt="Fintech App">
-                            </div>
-                            <div class="portfolio-content">
-                                <h3>Fintech App Interface</h3>
-                                <p>User-centered design for banking and financial products in the payments sector.</p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">UI Design</span>
-                                    <span class="tag">Figma</span>
-                                    <span class="tag">Prototyping</span>
-                                </div>
-                                <div class="portfolio-actions">
-                                    <a href="#" class="btn btn-secondary">View Case Study</a>
-                                </div>
+                                <h3 class="text-xl font-semibold">Digital Design</h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Skills Visualization -->
-        <section class="skills-visualization" id="skills-visualization">
-            <div class="container">
-                <h2>Skills & Expertise</h2>
-                <div class="skills-visualization-grid">
-                    <div class="skills-category">
-                        <h3>Design Skills</h3>
-                        <div class="skill-bar">
-                            <div class="skill-item">
-                                <span class="skill-name">Design thinking</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="90">90%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">User experience (UX) design</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="95">95%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">User interface (UI) design</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="92">92%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">User research</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="85">85%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Wire framing</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="90">90%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Prototyping</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="93">93%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Site maps</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="88">88%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">User flows</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="90">90%</div>
-                                </div>
-                            </div>
+    <!-- Skills Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">My <span class="text-primary-600 dark:text-primary-400">Skills</span></h2>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Expertise in creating beautiful, functional digital experiences
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- UI/UX Design Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-palette text-primary-600 dark:text-primary-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Creating intuitive interfaces with user-centered design principles
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span>Design Systems</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div class="bg-primary-600 h-2 rounded-full" style="width: 95%"></div>
                         </div>
                     </div>
-                    <div class="skills-category">
-                        <h3>Technical Skills</h3>
-                        <div class="skill-bar">
-                            <div class="skill-item">
-                                <span class="skill-name">HTML</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="95">95%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">CSS</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="94">94%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">JavaScript</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="88">88%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Python</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="80">80%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Responsive Design</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="96">96%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Cross-browser Compatibility</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="90">90%</div>
-                                </div>
-                            </div>
+                </div>
+                
+                <!-- Frontend Development Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700">
+                    <div class="w-12 h-12 bg-secondary-100 dark:bg-secondary-900/50 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-code text-secondary-600 dark:text-secondary-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Building responsive, accessible web applications
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span>React/Next.js</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div class="bg-secondary-600 h-2 rounded-full" style="width: 90%"></div>
                         </div>
                     </div>
-                    <div class="skills-category">
-                        <h3>Tools</h3>
-                        <div class="skill-bar">
-                            <div class="skill-item">
-                                <span class="skill-name">Figma</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="98">98%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Webflow</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="92">92%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">VS Code</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="95">95%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Notion</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="90">90%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Slack</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="85">85%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">WordPress</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="88">88%</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Google Workspace</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-width="95">95%</div>
-                                </div>
-                            </div>
+                </div>
+                
+                <!-- Product Strategy Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700">
+                    <div class="w-12 h-12 bg-green-100 dark:bg-green-900/50 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-lightbulb text-green-600 dark:text-green-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Product Strategy</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Aligning design with business goals and user needs
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span>Strategy</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div class="bg-green-600 h-2 rounded-full" style="width: 85%"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="experience" id="experience">
-            <div class="container">
-                <h2>Professional Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Product Designer (Remote) - DREST</h3>
-                            <p class="institution-location">Lagos, NG</p>
-                            <p class="job-dates">February 2025 — April 2025</p>
-                            <ul>
-                                <li>Spearheaded comprehensive redesign of a Tunisian Fashion e-commerce store, transforming their legacy website into a modern, and sleek online store.</li>
-                                <li>Conducted competitive analysis of leading fashion retailers to identify industry best practices and innovative features to implement</li>
-                                <li>Collaborated closely with a graphics designer to create custom visual assets that enhanced brand identity and improved visual aesthetics</li>
-                                <li>Implemented iterative design improvements based on stakeholder feedback, resulting in improved navigation and user flow</li>
-                                <li>Designed responsive interfaces, ensuring consistent user experience across desktop and mobile devices</li>
-                            </ul>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">Featured <span class="text-primary-600 dark:text-primary-400">Work</span></h2>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    A selection of projects that showcase my design and development expertise
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                    <div class="h-48 bg-gradient-to-br from-primary-500 to-primary-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-white text-4xl"></i>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Library Intern (Internship) - Gerar University of Medical Science Library</h3>
-                            <p class="institution-location">Ijebu-Ode, NG</p>
-                            <p class="job-dates">July 2024 — January 2025</p>
-                            <ul>
-                                <li>Learned by assisting in cataloguing and classification of library materials</li>
-                                <li>Helped users learn to use the library computer systems in completing their preferred tasks</li>
-                                <li>Contributed to the adoption of digital practices like Spreadsheets in recording of library materials</li>
-                                <li>Supervised E-tests</li>
-                            </ul>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-commerce App</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Modern shopping experience with intuitive navigation and seamless checkout
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-xs rounded-full">UI/UX</span>
+                            <span class="px-3 py-1 bg-secondary-100 dark:bg-secondary-900/50 text-secondary-600 dark:text-secondary-400 text-xs rounded-full">React</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 text-xs rounded-full">Figma</span>
+                        </div>
+                        <button class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium flex items-center">
+                            View Case Study
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                    <div class="h-48 bg-gradient-to-br from-secondary-500 to-secondary-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-white text-4xl"></i>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Lead Product Designer & Product manager - Devignerly</h3>
-                            <p class="institution-location">Lagos, NG</p>
-                            <p class="job-dates">November 2023 — June 2025</p>
-                            <ul>
-                                <li>Spearheaded the design and development of a comprehensive university portal for Gerar University of Medical Sciences, enabling new applicants, students, faculty, and staff with means to complete academic processes, administrative tools to manage admission process, payment tracking e.t.c.</li>
-                                <li>Interviewed administrative staff and stakeholders to deeply understand the needs of the university, informing the design of intuitive and user-friendly interfaces.</li>
-                                <li>Collaborated with the development team to translate designs into scalable and technically efficient platform to guarantee a frictionless user experience.</li>
-                                <li>Actively listened for feedback and made timely adjustments to satisfy user needs.</li>
-                            </ul>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Data visualization platform with real-time insights and customizable reports
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-xs rounded-full">UI/UX</span>
+                            <span class="px-3 py-1 bg-secondary-100 dark:bg-secondary-900/50 text-secondary-600 dark:text-secondary-400 text-xs rounded-full">Vue.js</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 text-xs rounded-full">D3.js</span>
+                        </div>
+                        <button class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium flex items-center">
+                            View Case Study
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-users text-white text-4xl"></i>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Lead UI/UX designer (Remote) - Paylode Services</h3>
-                            <p class="institution-location">Lagos, NG</p>
-                            <p class="job-dates">July 2022 — October 2023</p>
-                            <ul>
-                                <li>Led and contributed to the design and development for multiple user-centred end to end interfaces for banking and financial products in the online payments, bills payment and payment gateway services sector.</li>
-                                <li>Collaborated with cross-functional teams and stakeholders to gather requirements and translate them into effective design solutions.</li>
-                                <li>Worked closely with developers to ensure seamless implementation of designs.</li>
-                                <li>Worked closely with staff to gather requirements to make certain that administrative dashboards included features that enabled them to work efficiently.</li>
-                                <li>Helped design a Lagos state scholarship portal to register and manages avaible scholarships and applicants</li>
-                            </ul>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">SaaS Platform</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Comprehensive business management solution with team collaboration features
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-xs rounded-full">UI/UX</span>
+                            <span class="px-3 py-1 bg-secondary-100 dark:bg-secondary-900/50 text-secondary-600 dark:text-secondary-400 text-xs rounded-full">Next.js</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400 text-xs rounded-full">Tailwind</span>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Lead Product Designer & Product manager (Hybrid) - Advant Capitol. (Vant Savings)</h3>
-                            <p class="institution-location">Abeokuta, NG</p>
-                            <p class="job-dates">October 2022 — August 2023</p>
-                            <ul>
-                                <li>Researched user trends to implement savings solutions that actually resonate with users.</li>
-                                <li>Uncovered insights from current fintech trends as regards loan recovery to inform a key saving feature.</li>
-                                <li>Created user flows and tested with real users to make sure the goal of the product was intuitive and easy to figure out.</li>
-                                <li>Improved and identified issues with flows involving users successfully creating savings vaults.</li>
-                                <li>Managed developers all through development to ensure that designs appeared properly on various mobile devices.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>UI/UX Designer (Remote) - Eaglion Global Technologies, Ltd</h3>
-                            <p class="institution-location">Lagos, NG</p>
-                            <p class="job-dates">July 2022 — August 2023</p>
-                            <ul>
-                                <li>Designed a specialized Ecommerce solution based on company directives with a wallet system integrated to accept regular bank transfer and crypto payment.</li>
-                                <li>Delivered a polished website for a venture capitalist startup that aligned with their brand identity guide and user needs after interviewing relevant stakeholders to gather insights for the redesign of the company's website.</li>
-                                <li>Managed and Maintained a WordPress built ecommerce store for a multivendor business.</li>
-                            </ul>
-                        </div>
+                        <button class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium flex items-center">
+                            View Case Study
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </button>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Testimonials section -->
-        <section class="testimonials" id="testimonials">
-            <div class="container">
-                <h2>Testimonials</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"Working with Oluwanisola was a game-changer for our project. Her attention to user experience and ability to translate complex requirements into intuitive interfaces was exceptional."</p>
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">Client <span class="text-primary-600 dark:text-primary-400">Testimonials</span></h2>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    What people say about working with me
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-600 dark:text-primary-400 font-semibold">JD</span>
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <img src="assets/images/client1.jpg" alt="Client 1">
-                            </div>
-                            <div class="author-info">
-                                <h4>John Smith</h4>
-                                <p>Product Manager, TechCorp</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"Her design thinking approach and attention to detail resulted in a 40% increase in user engagement for our platform. Highly recommend her services."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <img src="assets/images/client2.jpg" alt="Client 2">
-                            </div>
-                            <div class="author-info">
-                                <h4>Sarah Johnson</h4>
-                                <p>CEO, StartupXYZ</p>
-                            </div>
+                        <div>
+                            <h4 class="font-semibold">John Doe</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">CEO, TechCorp</p>
                         </div>
                     </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"Professional, creative, and results-driven. Oluwanisola delivered beyond our expectations and was a pleasure to work with throughout the project."</p>
+                    <p class="text-gray-600 dark:text-gray-300 italic">
+                        "Rahul's attention to detail and user-centered approach transformed our product. The design is not only beautiful but highly functional."
+                    </p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-secondary-100 dark:bg-secondary-900/50 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-secondary-600 dark:text-secondary-400 font-semibold">SA</span>
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <img src="assets/images/client3.jpg" alt="Client 3">
-                            </div>
-                            <div class="author-info">
-                                <h4>Michael Brown</h4>
-                                <p>CTO, InnovateLabs</p>
-                            </div>
+                        <div>
+                            <h4 class="font-semibold">Sarah Adams</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Product Manager, InnovateX</p>
                         </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic">
+                        "Working with Rahul was a game-changer for our startup. His ability to translate complex requirements into elegant solutions is remarkable."
+                    </p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900/50 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-green-600 dark:text-green-400 font-semibold">MR</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Mike Roberts</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">CTO, Digital Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic">
+                        "The technical implementation was flawless. Rahul delivered a product that exceeded our expectations in both design and performance."
+                    </p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Blog section -->
-        <section class="blog" id="blog">
-            <div class="container">
-                <h2>Latest Articles</h2>
-                <div class="blog-grid">
-                    <article class="blog-post">
-                        <div class="blog-image">
-                            <img src="assets/images/blog1.jpg" alt="Blog post 1">
+    <!-- Blog Section -->
+    <section id="blog" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">Latest <span class="text-primary-600 dark:text-primary-400">Insights</span></h2>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Thoughts on design, technology, and the future of digital experiences
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <article class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700">
+                    <div class="h-48 bg-gradient-to-br from-gray-400 to-gray-600 relative">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            <time datetime="2023-12-01">Dec 1, 2023</time>
+                            <span class="mx-2">•</span>
+                            <span>5 min read</span>
                         </div>
-                        <div class="blog-content">
-                            <h3>Designing for User Experience: A Modern Approach</h3>
-                            <p class="blog-meta">By Oluwanisola Dele-Adelusi | June 15, 2023</p>
-                            <p>Exploring the latest trends in user experience design and how to implement them effectively in modern web applications.</p>
-                            <a href="#" class="read-more">Read More</a>
+                        <h3 class="text-xl font-semibold mb-3">The Future of User Experience Design</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Exploring emerging trends and technologies that are shaping the future of digital experiences...
+                        </p>
+                        <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium flex items-center">
+                            Read More
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            <time datetime="2023-11-25">Nov 25, 2023</time>
+                            <span class="mx-2">•</span>
+                            <span>7 min read</span>
                         </div>
-                    </article>
-                    <article class="blog-post">
-                        <div class="blog-image">
-                            <img src="assets/images/blog2.jpg" alt="Blog post 2">
+                        <h3 class="text-xl font-semibold mb-3">Building Accessible Web Applications</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A comprehensive guide to creating inclusive digital experiences that work for everyone...
+                        </p>
+                        <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium flex items-center">
+                            Read More
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 3 -->
+                <article class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 relative">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            <time datetime="2023-11-18">Nov 18, 2023</time>
+                            <span class="mx-2">•</span>
+                            <span>4 min read</span>
                         </div>
-                        <div class="blog-content">
-                            <h3>Responsive Design Best Practices</h3>
-                            <p class="blog-meta">By Oluwanisola Dele-Adelusi | May 28, 2023</p>
-                            <p>How to create responsive websites that work seamlessly across all devices and screen sizes.</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </article>
-                    <article class="blog-post">
-                        <div class="blog-image">
-                            <img src="assets/images/blog3.jpg" alt="Blog post 3">
-                        </div>
-                        <div class="blog-content">
-                            <h3>UI Design Trends for 2023</h3>
-                            <p class="blog-meta">By Oluwanisola Dele-Adelusi | April 12, 2023</p>
-                            <p>An overview of the most impactful UI design trends shaping the digital landscape this year.</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </article>
+                        <h3 class="text-xl font-semibold mb-3">Design Systems: The Foundation of Scale</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            How to create and maintain design systems that enable consistent, scalable product development...
+                        </p>
+                        <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium flex items-center">
+                            Read More
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-primary-600 dark:bg-primary-800 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Updated</h2>
+            <p class="text-lg text-primary-100 dark:text-primary-200 mb-8 max-w-2xl mx-auto">
+                Join my newsletter to receive insights on design, technology, and industry trends.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+                    required
+                >
+                <button 
+                    type="submit" 
+                    class="px-6 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Rahul Kumar</h3>
+                    <p class="text-gray-400">
+                        Creating digital experiences that inspire and engage users through thoughtful design and development.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#portfolio" class="hover:text-white transition-colors">Work</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-dribbble text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>rahul@example.com</li>
+                        <li>+1 (555) 123-4567</li>
+                        <li>San Francisco, CA</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-
-        <!-- Newsletter section -->
-        <section class="newsletter">
-            <div class="container">
-                <div class="newsletter-content">
-                    <h2>Stay Updated</h2>
-                    <p>Subscribe to my newsletter to receive updates on the latest design trends, articles, and resources.</p>
-                    <form class="newsletter-form" id="newsletter-form">
-                        <input type="email" placeholder="Enter your email address" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section class="education" id="education">
-            <div class="container">
-                <h2>Education</h2>
-                <div class="education-item">
-                    <h3>Tai Solarin Federal University of Education, Ijagun</h3>
-                    <p class="institution-location">Ijebu-Ode, NG</p>
-                    <p class="degree">Bachelor of Library and Information Science (B.LIS) | Graduation Date: November 2025</p>
-                    <p class="details">First Class Honours (CGPA: 4.52) – Best Graduating Student</p>
-                    <p class="details">Final Year Project Topic: "Developing a Cloud-based Online Public Access Catalogue (OPAC) with Open Knowledge Resources Integration for Academic Libraries in Nigeria"</p>
-                    <p class="details">Designed and directed the development of a prototype for the cloud-based OPAC system that integrated open access resources in search results along with physical library meta information.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="achievements">
-            <div class="container">
-                <h2>Awards & Certifications</h2>
-                <div class="certifications-grid">
-                    <div class="certification-item">
-                        <h3>Best Graduating Student</h3>
-                        <p>Department of Library and Information Science, TASFUED</p>
-                    </div>
-                    <div class="certification-item">
-                        <h3>First Class Honours Graduate</h3>
-                        <p>4.52/5.00 CGPA</p>
-                    </div>
-                    <div class="certification-item">
-                        <h3>Meta Introduction to Front-End Development</h3>
-                        <p>Coursera</p>
-                    </div>
-                    <div class="certification-item">
-                        <h3>Complete Web & Mobile UI/UX Designer</h3>
-                        <p>Zero To Mastery Academy - Udemy</p>
-                    </div>
-                    <div class="certification-item">
-                        <h3>Google IT Support Fundamentals</h3>
-                        <p>Coursera</p>
-                    </div>
-                    <div class="certification-item">
-                        <h3>Introduction to User Experience Design</h3>
-                        <p>Georgia Institute of Technology - Coursera</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container">
-            <p id="footer-text">&copy; DELE-ADELUSI OLUWANISOLA JOSHUA. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="tel:+2348109957139">+234 810 9957 139</a>
-                <a href="mailto:adelusisola@gmail.com">adelusisola@gmail.com</a>
-                <a href="#">LinkedIn</a>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Rahul Kumar. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    
-    <!-- Back to top button -->
-    <button class="back-to-top" id="back-to-top" title="Back to top">↑</button>
-    
-    <script src="script.js"></script>
-</body>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-lg border-t border-gray-200 dark:border-gray-700 p-4 z-50 transform translate-y-full transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex-1">
+                <p class="text-gray-700 dark:text-gray-300">
+                    We use cookies to improve your experience. By continuing to visit this site, you agree to our use of cookies.
+                </p>
+            </div>
+            <div class="flex space-x-3">
+                <button id="accept-cookies" class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
+                    Accept
+                </button>
+                <button id="decline-cookies" class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                    Decline
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or respect OS preference
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        html.classList.add(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.classList.contains('dark') ? 'light' : 'dark';
+            html.classList.remove(currentTheme === 'dark' ? 'dark' : 'light');
+            html.classList.add(currentTheme);
+            localStorage.setItem('theme', currentTheme);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Cookie Consent Banner
+        setTimeout(() => {
+            document.getElementById('cookie-banner').classList.remove('translate-y-full');
+        }, 2000);
+        
+        document.getElementById('accept-cookies').addEventListener('click', () => {
+            document.getElementById('cookie-banner').classList.add('translate-y-full');
+        });
+        
+        document.getElementById('decline-cookies').addEventListener('click', () => {
+            document.getElementById('cookie-banner').classList.add('translate-y-full');
+        });
+
+        // Form Submission
+        const newsletterForm = document.querySelector('form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = newsletterForm.querySelector('input[type="email"]').value;
+                alert(`Thank you for subscribing with ${email}!`);
+                newsletterForm.reset();
+            });
+        }
+
+        // Loading Spinner (simulated)
+        window.addEventListener('load', () => {
+            // In a real implementation, you would hide a loading spinner here
+            console.log('Page loaded');
+        });
+    </script>
+</body>
 </html>
