@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
       el.classList.add("fade-in");
     }, 150 * index);
   });
+
+  // Initialize hamburger menu
+  initHamburgerMenu();
 });
 
 // Hamburger menu functionality
@@ -44,7 +47,8 @@ function initHamburgerMenu() {
   const navContainer = document.querySelector(".nav-container");
 
   if (hamburger && navContainer) {
-    hamburger.addEventListener("click", () => {
+    hamburger.addEventListener("click", (e) => {
+      e.stopPropagation();
       navContainer.classList.toggle("active");
       hamburger.classList.toggle("active");
     });
