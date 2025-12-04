@@ -1521,12 +1521,13 @@
     border-bottom: 1px solid #333;
   }
 
-  .theme-toggle {
+  .back-to-top {
     bottom: 1.5rem;
     right: 1.5rem;
     width: 45px;
     height: 45px;
     padding: 0.6rem;
+    display: flex !important;
   }
 
   .whatsapp-float {
@@ -1537,13 +1538,12 @@
     padding: 0.6rem;
   }
 
-  .back-to-top {
+  .theme-toggle {
     bottom: 9rem;
     right: 1.5rem;
     width: 45px;
     height: 45px;
     padding: 0.6rem;
-    display: flex !important;
   }
 }
 
