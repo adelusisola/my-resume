@@ -117,6 +117,27 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
+// ---------- Local time (contact page) ----------
+// Shows the visitor my current local time in Lagos (WAT).
+(function initLocalTime() {
+  const el = document.getElementById("local-time");
+  if (!el) return;
+  let fmt;
+  try {
+    fmt = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Africa/Lagos",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  } catch (e) {
+    el.parentElement.style.display = "none";
+    return;
+  }
+  const tick = () => (el.textContent = fmt.format(new Date()));
+  tick();
+  setInterval(tick, 30000);
+})();
+
 // ---------- Contact form ----------
 const contactForm = document.getElementById("contactForm");
 if (contactForm) {

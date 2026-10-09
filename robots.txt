@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adelusisola.github.io/my-resume/sitemap.xml

@@ -65,18 +65,29 @@ npm run watch:css
 
 ```
 my-resume/
-├── index.html              # Main portfolio (hero, work, experience, about, toolkit, credentials, contact)
-├── contact.html            # Contact page (form + details)
-├── input.css               # Tailwind source — design tokens & components
-├── styles.css              # Compiled output (committed, linked by HTML)
-├── main.js                 # Theme, nav, GSAP motion, form validation
-├── sitemap.xml             # Search engine sitemap
-├── tailwind.config.cjs     # Tailwind config
-├── postcss.config.js       # PostCSS config
-├── package.json            # Dependencies
+├── index.html                  # Hub: hero, work index, experience, about, toolkit, credentials, CTA
+├── contact.html                # Contact page (form + details)
+├── work/
+│   ├── oprabills/              # Case study — AI personal finance (PM & PD, 2025–26)
+│   ├── vant-savings/           # Case study — savings fintech (Lead PM & PD, 2022–23)
+│   ├── paylode/                # Case study — payments suite (Lead UI/UX, 2022–23)
+│   ├── gerar-portal/           # Case study — university portal (Lead PM & PD, 2023–25)
+│   ├── drest/                  # Case study — fashion e-commerce redesign (PD, 2025)
+│   └── cloud-opac/             # Case study — thesis product (Designer & Lead, 2025)
+├── input.css                   # Tailwind source — design tokens & components
+├── styles.css                  # Compiled output (committed, linked by HTML)
+├── main.js                     # Theme, nav, GSAP motion, form validation
+├── sitemap.xml                 # All 8 site URLs
+├── robots.txt                  # Crawl rules + sitemap reference
+├── tailwind.config.cjs         # Tailwind config
+├── postcss.config.js           # PostCSS config
+├── package.json                # Dependencies
 └── assets/images/
-    └── nisola-portrait.jpg # Portrait (used on about + OG image)
+    ├── nisola-portrait.jpg     # Portrait (about + OG image)
+    └── favicon.svg             # Lime "n." mark
 ```
+
+Every page cross-links: the homepage work cards link to case studies, case studies carry breadcrumbs + a prev/next "Next project →" chain, and the footer on all 8 pages lists every work page and section.
 
 ---
 
@@ -88,10 +99,10 @@ All colors, fonts and surfaces are CSS variables at the top of `input.css` (`:ro
 
 ### Work card visuals
 
-The case-study cards use gradient placeholders (`work-visual--1` … `--6` in `input.css`). To use real product shots, replace the `.work-visual` div in `index.html` with:
+The case-study pages use labeled gradient placeholders (`work-visual--1` … `--6` and `.cs-fig` in `input.css`) at story beats — waitlist screens, user flows, dashboards. To use real product shots, replace the placeholder div in any `work/<slug>/index.html` with:
 
 ```html
-<img class="work-visual" src="assets/images/your-shot.jpg" alt="OpraBills dashboard">
+<img class="cs-fig" src="assets/images/your-shot.jpg" alt="OpraBills waitlist screen">
 ```
 
 ### Contact form
@@ -120,8 +131,9 @@ Ensure Pages is enabled in repo Settings → Pages (deploy from branch `main` / 
 
 ## 🔍 SEO
 
-- Meta tags (OG, Twitter), JSON-LD structured data, canonical URLs
-- `sitemap.xml` — submit at [Google Search Console](https://search.google.com/search-console) and [Bing Webmaster Tools](https://www.bing.com/webmaster/)
+- Meta tags (OG, Twitter), JSON-LD structured data (Person + BreadcrumbList), canonical URLs
+- `sitemap.xml` — all 8 URLs with priorities (home 1.0, case studies 0.9, contact 0.8)
+- `robots.txt` referencing the sitemap — submit at [Google Search Console](https://search.google.com/search-console) and [Bing Webmaster Tools](https://www.bing.com/webmaster/)
 - Google Analytics is **not** included; add your own snippet if needed
 
 ---
