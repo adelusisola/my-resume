@@ -1,48 +1,40 @@
-# Nisola's Portfolio & Resume
+# Nisola — Product Manager Portfolio
 
-A modern, responsive portfolio website showcasing professional qualifications, skills, projects, and journey. Built with **Tailwind CSS 4.1**, vanilla JavaScript, and best practices for performance, accessibility, and SEO.
+A dark-first, awwwards-inspired portfolio for Oluwanisola J. Dele-Adelusi, Product Manager. Built with **Tailwind CSS 4.1**, vanilla JavaScript, and GSAP scroll motion (progressively enhanced).
 
-**Live Demo:** [adelusisola.github.io/my-resume](https://adelusisola.github.io/my-resume/)
+**Live site:** [adelusisola.github.io/my-resume](https://adelusisola.github.io/my-resume/)
 
 ---
 
-## 📋 Features
+## ✨ Features
 
-✅ **Fully Responsive Design** - Works seamlessly on mobile, tablet, and desktop  
-✅ **Dark Mode Support** - Toggle between light and dark themes with persistence  
-✅ **Tailwind CSS 4.1** - Modern utility-first CSS framework  
-✅ **Accessibility** - WCAG compliant with ARIA labels and keyboard navigation  
-✅ **SEO Optimized** - Meta tags, structured data (JSON-LD), Open Graph  
-✅ **Mobile Hamburger Menu** - Smooth animations and interactions  
-✅ **Contact Form** - Real-time validation with FormSpree backend  
-✅ **Professional Typography** - Playfair Display + IBM Plex Sans  
-✅ **Back-to-Top Button** - Smooth scroll functionality
+- **Dark-first immersive design** — near-black canvas, electric-lime accent, Space Grotesk display type
+- **Case-study-driven work section** — six product case studies with swappable placeholder visuals
+- **GSAP scroll motion** — hero intro, scroll reveals, subtle parallax; respects `prefers-reduced-motion` and degrades gracefully without JavaScript
+- **Light mode** — full secondary theme, persisted in `localStorage`
+- **Fully responsive** — sticky section labels on desktop, stacked layout on mobile, slide-in drawer nav
+- **Accessible** — semantic HTML, ARIA labels, focus indicators, keyboard navigation
+- **SEO** — meta tags, JSON-LD structured data, Open Graph, `sitemap.xml`
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **HTML5** - Semantic markup
-- **Tailwind CSS 4.1** - Utility-first CSS
-- **Vanilla JavaScript** - No dependencies
-- **FormSpree** - Email backend
-- **Google Fonts** - Professional typography
+- **HTML5** — two static pages (`index.html`, `contact.html`)
+- **Tailwind CSS 4.1** — compiled from `input.css` (the design tokens and all components live there)
+- **Vanilla JavaScript** (`main.js`) — theme, nav, form validation, motion
+- **GSAP 3 + ScrollTrigger** (CDN) — scroll animations
+- **Font Awesome 6** (CDN) — icons
+- **FormSpree** — contact form backend
 
 ### Build Tools
 
-- Tailwind CLI
-- PostCSS
-- npm
+- Tailwind CLI (`npm run build:css`)
+- PostCSS / Autoprefixer
 
 ---
 
-## 📦 Installation
-
-### Prerequisites
-
-- Node.js 14+ and npm
-
-### Setup
+## 📦 Setup
 
 ```bash
 # Clone repository
@@ -59,8 +51,6 @@ npm run build:css
 npm run watch:css
 ```
 
----
-
 ## 📜 Scripts
 
 | Command             | Description                  |
@@ -75,46 +65,48 @@ npm run watch:css
 
 ```
 my-resume/
-├── index.html              # Main portfolio
-├── contact.html            # Contact page
-├── input.css               # Tailwind source
-├── styles.css              # Compiled output
-├── main.js                 # JavaScript
+├── index.html              # Main portfolio (hero, work, experience, about, toolkit, credentials, contact)
+├── contact.html            # Contact page (form + details)
+├── input.css               # Tailwind source — design tokens & components
+├── styles.css              # Compiled output (committed, linked by HTML)
+├── main.js                 # Theme, nav, GSAP motion, form validation
+├── sitemap.xml             # Search engine sitemap
 ├── tailwind.config.cjs     # Tailwind config
 ├── postcss.config.js       # PostCSS config
 ├── package.json            # Dependencies
-├── README.md               # Documentation
-└── assets/images/          # Images
+└── assets/images/
+    └── nisola-portrait.jpg # Portrait (used on about + OG image)
 ```
 
 ---
 
 ## 🎨 Customization
 
-### Content
+### Design tokens
 
-Edit `index.html` and `contact.html` with your information
+All colors, fonts and surfaces are CSS variables at the top of `input.css` (`:root` for dark, `body.light-mode` for light). Change `--accent` / `--accent-text` to re-skin the whole site.
 
-### Colors
+### Work card visuals
 
-Update `tailwind.config.cjs`:
+The case-study cards use gradient placeholders (`work-visual--1` … `--6` in `input.css`). To use real product shots, replace the `.work-visual` div in `index.html` with:
 
-```javascript
-colors: {
-  "dark-bg": "#1a1a1a",
-  "dark-text": "#e6e6e6",
-}
+```html
+<img class="work-visual" src="assets/images/your-shot.jpg" alt="OpraBills dashboard">
 ```
 
-### Fonts
+### Contact form
 
-Update Google Fonts import in `input.css` and `tailwind.config.cjs`
+Uses FormSpree — update the form ID in `main.js`:
+
+```javascript
+contactForm.setAttribute("action", "https://formspree.io/f/YOUR_ID");
+```
 
 ---
 
 ## 🚀 Deployment
 
-### GitHub Pages
+GitHub Pages serves straight from `main`:
 
 ```bash
 git add -A
@@ -122,143 +114,39 @@ git commit -m "Update portfolio"
 git push origin main
 ```
 
-Then enable in repo Settings → Pages
-
-### Automatic deploy (GitHub Actions)
-
-This repository includes a workflow that builds Tailwind CSS and deploys to GitHub Pages on push to `main` using the official Pages deploy actions. No extra configuration is necessary for GitHub Pages if you already have the repository connected; enable Pages in repository settings.
-
-### Generate a quick visual preview (PNG)
-
-If you'd like a PNG of the hero preview, you can open `preview-hero.html` in your browser and take a screenshot, or run Chrome headless to capture it automatically:
-
-Mac (Chrome):
-
-```bash
-# open the preview in headless Chrome and save screenshot
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu --screenshot=hero.png --window-size=1200,800 "file://$PWD/preview-hero.html"
-```
-
-Node + Puppeteer (optional):
-
-1. `npm install puppeteer --save-dev`
-2. Create `screenshot.js` with a simple script to load `preview-hero.html` and save `hero.png`.
-3. Or simply run the bundled npm script:
-
-```bash
-# Install dependencies (if not already)
-npm ci
-
-# Run the screenshot script (creates `hero.png`)
-npm run screenshot
-```
-
-### Other Platforms
-
-- Netlify (drag & drop)
-- Vercel (auto-deploy)
-- Traditional hosting (FTP/SFTP)
-
----
-
-## ♿ Accessibility
-
-- Semantic HTML structure
-- ARIA labels for forms
-- Keyboard navigation support
-- Proper color contrast
-- Focus indicators
-- Alt text for images
+Ensure Pages is enabled in repo Settings → Pages (deploy from branch `main` / root). `styles.css` is committed, so no build step is needed at deploy time.
 
 ---
 
 ## 🔍 SEO
 
-- Meta tags (OG, Twitter)
-- JSON-LD structured data
-- Canonical URLs
-- Mobile viewport
-- Sitemap-friendly
-- **Sitemap:** `sitemap.xml` (auto-generated)
-- **Analytics:** Google Analytics 4 (GA4) ready to configure
-
-### Analytics Setup
-
-This portfolio includes **Google Analytics 4 (GA4)** tracking code in both HTML files. To activate it:
-
-1. Create a Google Analytics 4 property at [analytics.google.com](https://analytics.google.com/)
-2. Copy your **Measurement ID** (format: `G-XXXXXXXXXX`)
-3. Replace `G-XXXXXXXXXX` in `index.html` and `contact.html` with your ID
-4. Alternatively, update both files to read from environment or config
-
-### Sitemap
-
-The `sitemap.xml` is ready for submission to search engines:
-
-1. Visit [Google Search Console](https://search.google.com/search-console)
-2. Add property: `https://adelusisola.github.io/my-resume/`
-3. Go to **Sitemaps** and add: `https://adelusisola.github.io/my-resume/sitemap.xml`
-4. Repeat for Bing at [Bing Webmaster Tools](https://www.bing.com/webmaster/)
+- Meta tags (OG, Twitter), JSON-LD structured data, canonical URLs
+- `sitemap.xml` — submit at [Google Search Console](https://search.google.com/search-console) and [Bing Webmaster Tools](https://www.bing.com/webmaster/)
+- Google Analytics is **not** included; add your own snippet if needed
 
 ---
 
 ## 📱 Responsive
 
-- Desktop: 1024px+
-- Tablet: 768px-1023px
-- Mobile: <768px
-
----
-
-## 📧 Contact Form
-
-Uses **FormSpree** for email backend:
-
-1. Sign up at [formspree.io](https://formspree.io)
-2. Get your form ID
-3. Update in `main.js`:
-   ```javascript
-   contactForm.setAttribute("action", "https://formspree.io/f/YOUR_ID");
-   ```
-
----
-
-## 🐛 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers
+- Desktop: 1024px+ (sticky section labels)
+- Tablet: 768–1024px
+- Mobile: <768px (drawer nav, stacked layouts)
 
 ---
 
 ## 📝 License
 
-ISC License - Feel free to use as a template
+ISC License — feel free to use as a template
 
 ---
 
 ## 👤 Author
 
-**DELE-ADELUSI OLUWANISOLA JOSHUA**  
-📧 adelusisola@gmail.com  
-📱 +234 810 9957 139  
-📍 Lagos, Nigeria
-
-**Links:**
+**Oluwanisola J. Dele-Adelusi** — Product Manager
+📧 adelusisola@gmail.com · 📍 Lagos, Nigeria
 
 - [LinkedIn](https://www.linkedin.com/in/dele-adelusi-oluwanisola/)
 - [GitHub](https://github.com/adelusisola)
-- [Twitter](https://x.com/Nisola_Adelusi)
+- [Twitter / X](https://x.com/Nisola_Adelusi)
 
----
-
-## 📚 Resources
-
-- [Tailwind CSS](https://tailwindcss.com/docs)
-- [MDN Web Docs](https://developer.mozilla.org/)
-- [WCAG Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
-- [Schema.org](https://schema.org/)
-
-**Version:** 1.0.0 | **Updated:** December 2025
+**Version:** 2.0.0 | **Updated:** October 2026

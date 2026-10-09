@@ -1,47 +1,30 @@
-// Minimalist JavaScript for seanoshea-inspired design
+// Portfolio interactions: theme, nav, motion, form validation
 
-// Theme Toggle
+// ---------- Theme (dark-first) ----------
 const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
 
-// Check for saved theme preference or respect OS preference
-const savedTheme =
-  localStorage.getItem("theme") ||
-  (window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light");
-if (savedTheme === "dark") {
-  body.classList.add("dark-mode");
-  themeToggle.textContent = "☀️"; // Changed to sun for dark mode (since it will toggle to light)
+// Dark is the default; only an explicit saved "light" preference switches it.
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "light") {
+  body.classList.add("light-mode");
+  themeToggle.textContent = "🌙"; // clicking will switch to dark
 } else {
-  themeToggle.textContent = "🌙"; // Changed to moon for light mode (since it will toggle to dark)
+  themeToggle.textContent = "☀️"; // clicking will switch to light
 }
 
 themeToggle.addEventListener("click", () => {
-  body.classList.toggle("dark-mode");
-  if (body.classList.contains("dark-mode")) {
-    themeToggle.textContent = "☀️"; // Sun icon when in dark mode
-    localStorage.setItem("theme", "dark");
-  } else {
-    themeToggle.textContent = "🌙"; // Moon icon when in light mode
+  body.classList.toggle("light-mode");
+  if (body.classList.contains("light-mode")) {
+    themeToggle.textContent = "🌙";
     localStorage.setItem("theme", "light");
+  } else {
+    themeToggle.textContent = "☀️";
+    localStorage.setItem("theme", "dark");
   }
 });
 
-// Simple fade-in animation for content
-document.addEventListener("DOMContentLoaded", function () {
-  const fadeElements = document.querySelectorAll(".section, .hero");
-  fadeElements.forEach((el, index) => {
-    setTimeout(() => {
-      el.classList.add("fade-in");
-    }, 150 * index);
-  });
-
-  // Initialize hamburger menu
-  initHamburgerMenu();
-});
-
-// Hamburger menu functionality
+// ---------- Hamburger menu ----------
 function initHamburgerMenu() {
   const hamburger = document.querySelector(".hamburger-menu");
   const navContainer = document.querySelector(".nav-container");
@@ -53,72 +36,108 @@ function initHamburgerMenu() {
       hamburger.classList.toggle("active");
     });
 
-    // Close menu when clicking on a nav link
-    const navLinks = document.querySelectorAll(".nav-link");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        navContainer.classList.remove("active");
-        hamburger.classList.remove("active");
-      });
+    const closeMenu = () => {
+      navContainer.classList.remove("active");
+      hamburger.classList.remove("active");
+    };
+
+    document.querySelectorAll(".nav-link, .nav-contact-btn").forEach((link) => {
+      link.addEventListener("click", closeMenu);
     });
 
-    // Close menu when clicking on contact button
-    const contactBtn = document.querySelector(".nav-contact-btn");
-    if (contactBtn) {
-      contactBtn.addEventListener("click", () => {
-        navContainer.classList.remove("active");
-        hamburger.classList.remove("active");
-      });
-    }
-
-    // Close menu when clicking outside
     document.addEventListener("click", (e) => {
       if (!hamburger.contains(e.target) && !navContainer.contains(e.target)) {
-        navContainer.classList.remove("active");
-        hamburger.classList.remove("active");
+        closeMenu();
       }
     });
   }
 }
 
-// Form submission for contact page
-const contactForm = document.getElementById("contactForm");
-if (contactForm) {
-  // Use FormSubmit for backend email handling
-  contactForm.setAttribute("action", "https://formspree.io/f/myzqvyqq");
-  contactForm.setAttribute("method", "POST");
+// ---------- Scroll motion (GSAP, progressively enhanced) ----------
+function initMotion() {
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  const hasGsap =
+    typeof window.gsap !== "undefined" &&
+    typeof window.ScrollTrigger !== "undefined";
 
-  // Add real-time validation
-  const inputs = contactForm.querySelectorAll("input, textarea");
-  inputs.forEach((input) => {
-    input.addEventListener("blur", () => {
-      validateField(input);
-    });
+  if (!hasGsap || reducedMotion) return; // content stays fully visible
 
-    input.addEventListener("input", () => {
-      clearError(input);
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero intro: staggered rise
+  gsap.from("[data-hero]", {
+    y: 42,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.12,
+    ease: "power3.out",
+  });
+
+  // Sections and cards: reveal as they enter the viewport
+  gsap.utils.toArray("[data-reveal]").forEach((el) => {
+    gsap.from(el, {
+      y: 36,
+      opacity: 0,
+      duration: 0.9,
+      ease: "power3.out",
+      scrollTrigger: { trigger: el, start: "top 88%" },
     });
   });
 
-  contactForm.addEventListener("submit", function (e) {
-    const fields = ["name", "email", "subject", "message"];
-    let isValid = true;
-
-    // Validate all fields
-    fields.forEach((fieldId) => {
-      const field = document.getElementById(fieldId);
-      if (!validateField(field)) {
-        isValid = false;
+  // Subtle parallax drift on work visuals
+  gsap.utils.toArray(".work-visual").forEach((el) => {
+    gsap.fromTo(
+      el,
+      { yPercent: 4 },
+      {
+        yPercent: -4,
+        ease: "none",
+        scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true },
       }
-    });
-
-    if (!isValid) {
-      e.preventDefault();
-    }
+    );
   });
 }
 
-// Field validation helper
+// ---------- Back to top ----------
+const backToTopButton = document.getElementById("backToTop");
+if (backToTopButton) {
+  window.addEventListener("scroll", () => {
+    backToTopButton.classList.toggle("show", window.scrollY > 400);
+  });
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+// ---------- Footer year ----------
+const yearEl = document.getElementById("year");
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
+
+// ---------- Contact form ----------
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.setAttribute("action", "https://formspree.io/f/myzqvyqq");
+  contactForm.setAttribute("method", "POST");
+
+  contactForm.querySelectorAll("input, textarea").forEach((input) => {
+    input.addEventListener("blur", () => validateField(input));
+    input.addEventListener("input", () => clearError(input));
+  });
+
+  contactForm.addEventListener("submit", function (e) {
+    let isValid = true;
+    ["name", "email", "subject", "message"].forEach((fieldId) => {
+      const field = document.getElementById(fieldId);
+      if (!validateField(field)) isValid = false;
+    });
+    if (!isValid) e.preventDefault();
+  });
+}
+
 function validateField(field) {
   const value = field.value.trim();
   const errorSpan = document.getElementById(field.id + "-error");
@@ -129,12 +148,9 @@ function validateField(field) {
   if (!value) {
     isValid = false;
     errorMessage = "This field is required";
-  } else if (field.type === "email") {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(value)) {
-      isValid = false;
-      errorMessage = "Please enter a valid email address";
-    }
+  } else if (field.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+    isValid = false;
+    errorMessage = "Please enter a valid email address";
   }
 
   if (errorSpan) {
@@ -152,7 +168,6 @@ function validateField(field) {
   return isValid;
 }
 
-// Clear error message on input
 function clearError(field) {
   const errorSpan = document.getElementById(field.id + "-error");
   if (errorSpan && field.value.trim()) {
@@ -162,24 +177,8 @@ function clearError(field) {
   }
 }
 
-// Back to Top Button functionality
-const backToTopButton = document.getElementById("backToTop");
-
-if (backToTopButton) {
-  // Show/hide button based on scroll position
-  window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 300) {
-      backToTopButton.classList.add("show");
-    } else {
-      backToTopButton.classList.remove("show");
-    }
-  });
-
-  // Scroll to top when button is clicked
-  backToTopButton.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
-}
+// ---------- Init ----------
+document.addEventListener("DOMContentLoaded", () => {
+  initHamburgerMenu();
+  initMotion();
+});
